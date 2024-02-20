@@ -21,6 +21,7 @@ const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const Logout = () => {
     window.localStorage.removeItem(MY_AUTH_APP);
     window.localStorage.removeItem("inforUser");
+    // window.localStorage.removeItem("listPacientes");
     setIsAuthenticated(false);
   };
   const updateUserInfo = (info) => {

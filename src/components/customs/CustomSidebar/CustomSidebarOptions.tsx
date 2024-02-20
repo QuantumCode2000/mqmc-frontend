@@ -6,13 +6,9 @@ const CustomSidebarOptions = ({ data_user, opciones }) => {
       <div className='perfil-usuario'>
         <img src={data_user.imgPerfil} alt='' className='foto-usuario' />
         {data_user.informacionLaboral.unidadOrganizacional.nivelJerarquico ===
-        "Super Administrador" ? null : (
+          "Super Administrador" ? null : (
           <div className='text-perfil nome-usuario'>
-            {data_user.nombres +
-              " " +
-              data_user.primerApellido +
-              " " +
-              data_user.segundoApellido}
+            {data_user.nombre}
           </div>
         )}
         <div className='text-perfil rol-usuario'>

@@ -1,9 +1,7 @@
 const headerTablesAdminUs = {
   numeroDocumento: "Número de Documento",
   expedicionDocumento: "Expedición Documento",
-  nombres: "Nombres",
-  primerApellido: "Primer Apellido",
-  segundoApellido: "Segundo Apellido",
+  nombre: "Nombres",
   nombreUsuario: "Nombre de Usuario",
   celularPersonal: "Celular Personal",
   correoPersonal: "Correo Personal",
@@ -17,4 +15,14 @@ const headerTablePaciente = {
   segundoApellido: "Segundo Apellido",
   nombreUsuario: "Nombre de Usuario",
 };
-export { headerTablesAdminUs, headerTablePaciente };
+const headerCasos = {
+      nombre: "Nombre",
+      documento: "CI",
+      expedicion: "Expedicion",
+      sexo: "Sexo",
+      edad: "Edad",
+      fechaDiagnostico: "Fecha de Diagnostico",
+      diagnostico: "Diagnostico",
+      imgDiagnostData: "Imagen Diagnostico",
+}
+export { headerTablesAdminUs, headerTablePaciente,headerCasos };

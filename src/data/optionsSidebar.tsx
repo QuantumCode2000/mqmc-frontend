@@ -1,11 +1,6 @@
 import { GrUserAdd, GrUserSettings, GrLogout } from "react-icons/gr";
 
-const opciones = [
-  // {
-  //   to: "/administrar-personal/crear-usuarios",
-  //   icon: <GrUserAdd />,
-  //   text: "Nuevo Personal",
-  // },
+const opcionesAdmin = [
   {
     to: "/administrar-pacientes",
     icon: <GrUserAdd />,
@@ -22,5 +17,24 @@ const opciones = [
     text: "Cerrar sesión",
   },
 ];
+const opcionesPsicologo = [
+  {
+    to: "/nuevo-caso",
+    icon: <GrUserAdd />,
+    text: "Nuevo Caso",
+  },
+  {
+    to: "/casos",
+    icon: <GrUserSettings />,
+    text: "Casos",
+  },
+  {
+    to: "/logout",
+    icon: <GrLogout />,
+    text: "Cerrar sesión",
+  },
+];
 
-export default opciones;
+
+
+export { opcionesAdmin, opcionesPsicologo };

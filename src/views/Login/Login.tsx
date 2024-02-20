@@ -3,21 +3,23 @@ import CustomInput from "../../components/customs/CustomInput/CustomInput";
 import CustomButton from "../../components/customs/CustomButton/CustomButton";
 import { useState, useContext } from "react";
 import AuthContext from "../../context/AuthContext";
+import UsersContext from "../../context/UsersContext";
 import listUsers from "../../data/listUsers.ts";
 const Login = () => {
   const { Login, updateUserInfo } = useContext(AuthContext);
-  const [isPaciente, setIsPaciente] = useState(false);
+  const { updateListPacientes, updateListPersonal } = useContext(UsersContext);
+  // const [isPaciente, setIsPaciente] = useState(false);
   const [loginDate, setLoginDate] = useState({
     username: "",
     password: "",
   });
-
-  let user_list = [];
-  if (isPaciente) {
-    user_list = listUsers.pacientes;
-  } else {
-    user_list = listUsers.personal;
-  }
+  const user_list = listUsers.personal;
+  // const user_list = [];
+  // if (isPaciente) {
+  //   user_list = listUsers.pacientes;
+  // } else {
+  //   user_list = listUsers.personal;
+  // }
   console.log(user_list);
   const user = user_list.find(
     (user) =>
@@ -39,6 +41,8 @@ const Login = () => {
     if (user) {
       Login();
       updateUserInfo(user);
+      updateListPacientes(listUsers.pacientes);
+      updateListPersonal(listUsers.personal);
     } else {
       alert("Usuario incorrecto");
     }
@@ -49,12 +53,14 @@ const Login = () => {
       <form action='' onSubmit={handleSubmit} className='login-container'>
         <h1 className='login-title'>Iniciar Sesion</h1>
 
-        <label htmlFor=''>Soy paciente</label>
-        <input
-          type='checkbox'
-          value={isPaciente}
-          onChange={() => setIsPaciente(!isPaciente)}
-        />
+        {
+          //   <label htmlFor=''>Soy paciente</label>
+          // <input
+          //   type='checkbox'
+          //   value={isPaciente}
+          //   onChange={() => setIsPaciente(!isPaciente)}
+          // />
+        }
 
         <CustomInput
           // label='Username'
