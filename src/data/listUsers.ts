@@ -16,12 +16,8 @@ const usuarios = {
         correoInstitucional: "admin@admin.com",
         estado: "Activo",
         especialidad: "Super Administrador",
-        unidadOrganizacional: {
-          id: 1,
-          sigla: "RH",
-          nombre: "Desarrollo",
-          nivelJerarquico: "Super Administrador",
-        },
+        nivelJerarquico: "Super Administrador",
+        
       },
     },
     {
@@ -30,7 +26,7 @@ const usuarios = {
       nombre: "Juan David Perez Ramirez",
 
       numeroDocumento: "123456789",
-      expedicionDocumento: "admin",
+      expedicion: "LP",
 
       password: "123456789",
       nombreUsuario: "jperezr",
@@ -40,12 +36,8 @@ const usuarios = {
         correoInstitucional: "admin@admin.com",
         estado: "Activo",
         especialidad: "Psicologia",
-        unidadOrganizacional: {
-          id: 1,
-          sigla: "RH",
-          nombre: "Psicologia",
-          nivelJerarquico: "Medico",
-        },
+        nivelJerarquico: "Medico",
+        
       },
     },
   ],

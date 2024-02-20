@@ -13,14 +13,14 @@ const Login = () => {
     username: "",
     password: "",
   });
-  const user_list = listUsers.personal;
+  //user_list toma el valor de lissuser.persona si es que no exist eun item llamdo listPersonal en el localstorage
+  const user_list = JSON.parse(window.localStorage.getItem("listPersonal")) || listUsers.personal;
   // const user_list = [];
   // if (isPaciente) {
   //   user_list = listUsers.pacientes;
   // } else {
   //   user_list = listUsers.personal;
   // }
-  console.log(user_list);
   const user = user_list.find(
     (user) =>
       user.nombreUsuario === loginDate.username &&

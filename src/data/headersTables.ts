@@ -1,10 +1,9 @@
 const headerTablesAdminUs = {
   numeroDocumento: "Número de Documento",
-  expedicionDocumento: "Expedición Documento",
+  expedicion: "Expedición Documento",
   nombre: "Nombres",
   nombreUsuario: "Nombre de Usuario",
-  celularPersonal: "Celular Personal",
-  correoPersonal: "Correo Personal",
+  
 };
 
 const headerTablePaciente = {

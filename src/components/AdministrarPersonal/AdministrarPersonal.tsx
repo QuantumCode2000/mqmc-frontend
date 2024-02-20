@@ -1,22 +1,27 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { headerTablesAdminUs } from "../../data/headersTables";
 import listUsers from "../../data/listUsers.ts";
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
 import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersonal.tsx";
+import UsersContext from "../../context/UsersContext";
 const AdministrarPersonal = () => {
-  const [personal, setPersonal] = useState([]);
+  const { personal } = useContext(UsersContext);
+
+  const [personalList, setPersonalList] = useState([]);
   useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem("listPersonal") as string);
     if (data) {
-      setPersonal(data);
+      setPersonalList(data);
     }
-  })
+  }, [
+    localStorage, personal
+  ])
 
   return (
     <main className=' window-content '>
       {
-        personal.length > 0 ? (
-          <CustomTNR headerTablesAdminUs={headerTablesAdminUs} data={personal} />
+        personalList.length > 0 ? (
+          <CustomTNR headerTablesAdminUs={headerTablesAdminUs} data={personalList} />
         ) : (
           <p>Loading personal...</p>
         )

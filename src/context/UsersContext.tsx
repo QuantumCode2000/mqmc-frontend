@@ -1,4 +1,4 @@
-import { useState, createContext, FC, ReactNode } from "react";
+import { useState, createContext, FC, ReactNode, useEffect } from "react";
 import listUser from "../data/listUsers";
 
 const UsersContext = createContext(null);
@@ -19,6 +19,7 @@ const UsersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         window.localStorage.setItem("listPersonal", JSON.stringify(list));
         setPersonal(list);
     }
+    
 
     const value = {
         personal,
@@ -26,6 +27,7 @@ const UsersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         pacientes,
         updateListPacientes
     };
+    console.log("Personal", personal);
 
     return <UsersContext.Provider value={value}
 

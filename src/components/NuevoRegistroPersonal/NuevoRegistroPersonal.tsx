@@ -5,6 +5,7 @@ import CustomButton from "../customs/CustomButton/CustomButton";
 
 function NuevoRegistroPersonal() {
   const [openModal, setOpenModal] = useState(false);
+  
 
   return (
     <>
