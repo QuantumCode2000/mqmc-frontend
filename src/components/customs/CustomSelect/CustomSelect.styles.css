@@ -1,5 +1,6 @@
 .custom-select{
-    width: 20%;
+    min-width: auto;
+    max-width: 30rem;
     padding: 0.375rem 2.25rem 0.375rem 0.75rem;
     font-size: 1.3rem;
     font-weight: 400;

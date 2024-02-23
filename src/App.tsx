@@ -6,14 +6,13 @@ import PublicRoute from "./components/router/PublicRoute";
 import Logout from "./views/Logout/Logout";
 import AdministrarPersonal from "./components/AdministrarPersonal/AdministrarPersonal";
 import AdministrarPacientes from "./components/AdministrarPacientes/AdministrarPacientes";
-import NuevoCaso from "./components/NuevoCaso/NuevoCaso";
+import NuevoPaciente from "./components/NuevoPaciente/NuevoPaciente";
 import Casos from "./components/Casos/Casos";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <PrivateRoute />,
     children: [
-
       {
         index: true,
         element: <h1></h1>,
@@ -24,18 +23,18 @@ const router = createBrowserRouter([
       },
       {
         path: "/administrar-pacientes",
-        element: <AdministrarPacientes />,
+        // element: <AdministrarPacientes />,
       },
       {
         path: "/administrar-personal",
         element: <AdministrarPersonal />,
       },
       {
-        path: "/nuevo-caso",
-        element: <NuevoCaso />,
+        path: "/nuevo-paciente",
+        element: <NuevoPaciente />,
       },
       {
-        path: "/casos",
+        path: "/pacientes",
         element: <Casos />,
       }
     ],

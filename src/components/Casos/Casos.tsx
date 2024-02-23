@@ -1,4 +1,4 @@
-import { headerCasos } from "../../data/headersTables";
+import { headersPaciente } from "../../data/headersTables";
 import listUsers from "../../data/listUsers";
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
 import UsersContext from "../../context/UsersContext";
@@ -21,7 +21,7 @@ const Casos = () => {
         <main className="window-content">
             {/* <CustomTNR headerTablesAdminUs={headerCasos} data={pacientes} /> */}
             {pacientes.length > 0 ? (
-                <CustomTNR headerTablesAdminUs={headerCasos} data={pacientes} />
+                <CustomTNR headerTablesAdminUs={headersPaciente} data={pacientes} />
             ) : (
                 <p>Loading pacientes...</p>
             )}

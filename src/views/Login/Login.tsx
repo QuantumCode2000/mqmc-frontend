@@ -41,8 +41,12 @@ const Login = () => {
     if (user) {
       Login();
       updateUserInfo(user);
-      updateListPacientes(listUsers.pacientes);
-      updateListPersonal(listUsers.personal);
+      // si no hay items en el localstorage con el nombre listPacientes
+      // se carga la lista de pacientes desde el archivo listUsers.ts
+      if (!window.localStorage.getItem("listPacientes")) {
+        updateListPacientes(listUsers.pacientes);
+        updateListPersonal(listUsers.personal);
+      }
     } else {
       alert("Usuario incorrecto");
     }

@@ -1,69 +1,77 @@
+import { GiObservatory } from "react-icons/gi";
+
 const usuarios = {
   personal: [
     {
-      id: 0,
+      id: 1,
       imgPerfil: "https://cdn-icons-png.flaticon.com/512/6915/6915987.png",
-      nombre: "admin",
-
-      numeroDocumento: "123456789",
+      nombresApellidos: "admin",
+      documento: "admin",
       expedicion: "admin",
-
       password: "123456789",
       nombreUsuario: "admin",
-
+      especialidadMedico: "Super Administrador",
+      division: "admin",
+      unidad: "admin",
+      correoInstitucional: "admin@admin.com",
       informacionLaboral: {
         tipoLaboral: "Administrador del sistema",
-        correoInstitucional: "admin@admin.com",
         estado: "Activo",
-        especialidad: "Super Administrador",
         nivelJerarquico: "Super Administrador",
-        
       },
     },
     {
-      id: 1,
+      id: 2,
       imgPerfil: "https://cdn-icons-png.flaticon.com/512/6915/6915987.png",
-      nombre: "Juan David Perez Ramirez",
-
-      numeroDocumento: "123456789",
+      nombresApellidos: "Juan David Perez Ramirez",
+      documento: "12421511",
       expedicion: "LP",
-
-      password: "123456789",
+      password: "trhrty6u7uyu",
       nombreUsuario: "jperezr",
-
+      especialidadMedico: "Medico General",
+      division: "DIV. 1",
+      unidad: "RA - 3 'PISAGUA'",
+      correoInstitucional: "jperezr@empresa.com",
       informacionLaboral: {
         tipoLaboral: "Medico",
-        correoInstitucional: "admin@admin.com",
         estado: "Activo",
-        especialidad: "Psicologia",
         nivelJerarquico: "Medico",
-        
       },
     },
   ],
   pacientes: [
     {
       id: 1,
-      nombre: "Leonel Sanchez Barra",
-      documento: "12421511",
-      expedicion: "LP",
-      sexo: "Masculino",
-      edad: 15,
-      fechaDiagnostico: "1996-06-12T00:00:00.000Z",
-      diagnostico: "Sin diagnostico",
-      imgDiagnostData: "/"
+      fechaRegistro: "12/12/2021",
+      division: "DIV. 1",
+      unidad: "RA - 3 'PISAGUA'",
+      grado: "SLDO.",
+      elón: "1ER. ELON/23",
+      nombresApellidos: "HEROS VALDÉZ COCHI",
+      diagnosticoDeIngreso: "MICOSIS PLANTAR",
+      centroHospitalario: "HOSPITAL MILITAR",
+      fechaDeIngreso: "12/12/2021",
+      situaciónActual: "ALTA",
+      especialidad: "DERMATOLOGÍA",
+      observaciones: "CONTINÚA INTERNADO",
+      documentoMedicoTratante: "12421511",
     },
     {
       id: 2,
-      nombre: "Jorge Luis Tancara",
-      documento: "12421511",
-      expedicion: "LP",
-      sexo: "Masculino",
-      edad: 15,
-      fechaDiagnostico: "1996-05-12T00:00:00.000Z",
-      diagnostico: "Sin diagnostico",
-      imgDiagnostData: "/"
-    }
+      fechaRegistro: "12/12/2021",
+      division: "DIV. 2",
+      unidad: "RA - 3 'PISAGUA'",
+      grado: "CBO.",
+      elón: "1ER. ELON/23",
+      nombresApellidos: "KEVIN COCHI VALDÉZ",
+      diagnosticoDeIngreso: "MICOSIS PLANTAR",
+      centroHospitalario: "HOSPITAL MILITAR",
+      fechaDeIngreso: "12/12/2021",
+      situaciónActual: "ALTA",
+      especialidad: "DERMATOLOGÍA",
+      observaciones: "CONTINÚA INTERNADO",
+      documentoMedicoTratante: "12421511",
+    },
   ],
 };
 

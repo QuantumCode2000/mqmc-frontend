@@ -1,9 +1,10 @@
 import { useEffect, useState, useContext } from "react";
-import { headerTablesAdminUs } from "../../data/headersTables";
+import { headersMedico } from "../../data/headersTables";
 import listUsers from "../../data/listUsers.ts";
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
 import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersonal.tsx";
 import UsersContext from "../../context/UsersContext";
+
 const AdministrarPersonal = () => {
   const { personal } = useContext(UsersContext);
 
@@ -21,7 +22,7 @@ const AdministrarPersonal = () => {
     <main className=' window-content '>
       {
         personalList.length > 0 ? (
-          <CustomTNR headerTablesAdminUs={headerTablesAdminUs} data={personalList} />
+          <CustomTNR headerTablesAdminUs={headersMedico} data={personalList} />
         ) : (
           <p>Loading personal...</p>
         )

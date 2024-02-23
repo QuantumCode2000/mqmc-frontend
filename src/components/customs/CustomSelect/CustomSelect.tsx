@@ -1,7 +1,8 @@
 import './CustomSelect.styles.css'
-const CustomSelect = ({ onChange, arrayOptionsSelect, value, name }) => {
+const CustomSelect = ({ label, onChange, arrayOptionsSelect, value, name }) => {
     return (
         <>
+            <label htmlFor="">{label}</label>
             <select
 
                 onChange={onChange}

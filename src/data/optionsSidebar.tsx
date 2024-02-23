@@ -17,7 +17,25 @@ const opcionesAdmin = [
     text: "Cerrar sesión",
   },
 ];
-const opcionesPsicologo = [
+const opcionesMedico = [
+  {
+    to: "/nuevo-paciente",
+    icon: <GrUserAdd />,
+    text: "Nuevo Paciente",
+  },
+  {
+    to: "/pacientes",
+    icon: <GrUserSettings />,
+    text: "Pacientes",
+  },
+  {
+    to: "/logout",
+    icon: <GrLogout />,
+    text: "Cerrar sesión",
+  },
+];
+
+const opcionesSoldado = [
   {
     to: "/nuevo-caso",
     icon: <GrUserAdd />,
@@ -37,4 +55,4 @@ const opcionesPsicologo = [
 
 
 
-export { opcionesAdmin, opcionesPsicologo };
+export { opcionesAdmin, opcionesMedico };

@@ -19,7 +19,7 @@ const UsersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         window.localStorage.setItem("listPersonal", JSON.stringify(list));
         setPersonal(list);
     }
-    
+
 
     const value = {
         personal,
@@ -27,7 +27,6 @@ const UsersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         pacientes,
         updateListPacientes
     };
-    console.log("Personal", personal);
 
     return <UsersContext.Provider value={value}
 
