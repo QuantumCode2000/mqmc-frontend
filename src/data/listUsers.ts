@@ -31,7 +31,7 @@ const usuarios = {
       especialidadMedico: "Medico General",
       division: "DIV. 1",
       unidad: "RA - 3 'PISAGUA'",
-      correoInstitucional: "jperezr@empresa.com",
+      correoInstitucional: "dactacan@gmail.com",
       informacionLaboral: {
         tipoLaboral: "Medico",
         estado: "Activo",

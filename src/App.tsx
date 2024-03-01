@@ -1,13 +1,14 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./views/Login/Login";
-import PrivateRoute from "./components/router/PrivateRoute";
-import PublicRoute from "./components/router/PublicRoute";
-import Logout from "./views/Logout/Logout";
-import AdministrarPersonal from "./components/AdministrarPersonal/AdministrarPersonal";
-import AdministrarPacientes from "./components/AdministrarPacientes/AdministrarPacientes";
-import NuevoPaciente from "./components/NuevoPaciente/NuevoPaciente";
-import Casos from "./components/Casos/Casos";
+import { Login, Logout } from "./views/exports";
+import {
+  NuevoPaciente,
+  PrivateRoute,
+  PublicRoute,
+  AdministrarPersonal,
+  AgendarCita,
+  Casos,
+} from "./components/exports";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/pacientes",
         element: <Casos />,
-      }
+      },
     ],
   },
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/agendar-cita",
+        element: <AgendarCita />,
       },
     ],
   },

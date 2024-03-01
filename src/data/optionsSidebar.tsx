@@ -1,5 +1,6 @@
 import { GrUserAdd, GrUserSettings, GrLogout } from "react-icons/gr";
-
+import { FaFileMedical } from "react-icons/fa";
+import { BsFileEarmarkMedical } from "react-icons/bs";
 const opcionesAdmin = [
   {
     to: "/administrar-pacientes",
@@ -29,10 +30,17 @@ const opcionesMedico = [
     text: "Pacientes",
   },
   {
+    to: "/citas-agendadas",
+    icon: <BsFileEarmarkMedical />,
+    text: "Citas Agendadas",
+  },
+  {
     to: "/logout",
     icon: <GrLogout />,
     text: "Cerrar sesión",
   },
+
+
 ];
 
 const opcionesSoldado = [
@@ -55,4 +63,4 @@ const opcionesSoldado = [
 
 
 
-export { opcionesAdmin, opcionesMedico };
+export { opcionesAdmin, opcionesMedico, opcionesSoldado};
