@@ -13,7 +13,7 @@ const usuarios = {
       especialidadMedico: "Super Administrador",
       division: "admin",
       unidad: "admin",
-      correoInstitucional: "admin@admin.com",
+      correoInstitucional: "dactacan@gmail.com",
       informacionLaboral: {
         tipoLaboral: "Administrador del sistema",
         estado: "Activo",

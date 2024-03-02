@@ -138,10 +138,8 @@ const Login = () => {
         />
         {
           user!== undefined ? (
-            <input
-          type="submit"
-          value="Enviar codigo de verificacion"
-        />
+           
+        <CustomButton type="submit" content="Enviar codigo de verificacion" />
           ) : null
         }
       </form>
