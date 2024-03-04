@@ -6,10 +6,10 @@ const Citas = () => {
     console.log(citas);
   return (
 <main className="window-content">
-    {citas.length > 0 ? (
+    {citas !== null ? (
             <CustomTNR headerTablesAdminUs={headersCita} data={citas} />
         ) : (
-            <p>Loading citas...</p>
+            <p>No tiene citas</p>
         )}
     </main>
   )
