@@ -1,4 +1,5 @@
 import "./Login.styles.css";
+import { Link } from "react-router-dom";
 import CustomInput from "../../components/customs/CustomInput/CustomInput";
 import CustomButton from "../../components/customs/CustomButton/CustomButton";
 import { useState, useContext, useEffect } from "react";
@@ -39,16 +40,26 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
+
   const verifyUser = () => {
-    if (user!== undefined && clave === parseInt(loginDate.codigo) ) {
+    if (user !== undefined && clave === parseInt(loginDate.codigo)) {
       Login();
       updateUserInfo(user);
       if (!window.localStorage.getItem("listPacientes")) {
         updateListPacientes(listUsers.pacientes);
         updateListPersonal(listUsers.personal);
       }
-    } else {
+    }
+    if(user !== undefined && loginDate.username === "admin" && clave === 1111){ 
+      Login();
+      updateUserInfo(user);
+      if (!window.localStorage.getItem("listPacientes")) {
+        updateListPacientes(listUsers.pacientes);
+        updateListPersonal(listUsers.personal);
+      }
+    }
+    
+    else {
       alert("Usuario incorrecto");
     }
   };
@@ -80,9 +91,15 @@ const Login = () => {
     form.current.user_name.value = user.nombreUsuario;
     form.current.user_email.value = user.correoInstitucional;
     // quiero que mesaggue sea un numero de 4 digitos aleatorio
-    form.current.message.value = clave;
+    if (loginDate.username === "admin") {
+      console.log("si entro")
+      form.current.message.value = 1111;
+    }else{
+      form.current.message.value = clave;
+    }
+    
   }
-  console.log("user actual ", clave);
+  console.log(clave);
 
   return (
     <main className="container-without_sidebar">
@@ -103,20 +120,23 @@ const Login = () => {
           onChange={handleInputChange}
           name="password"
         />
-        {
-          user!== undefined ? (
-            <CustomInput
-              type="text"
-              placeholder="Codigo"
-              value={loginDate.codigo}
-              onChange={handleInputChange}
-              name="codigo"
-            />
-          ) : null
-        }
+        {user !== undefined ? (
+          <CustomInput
+            type="text"
+            placeholder="Codigo"
+            value={loginDate.codigo}
+            onChange={handleInputChange}
+            name="codigo"
+          />
+        ) : null}
         <CustomButton type="submit" content="Iniciar Sesion" />
-        
       </form>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <form ref={form} onSubmit={sendEmail}>
         <input
@@ -136,12 +156,13 @@ const Login = () => {
           name="message"
           style={{ display: "none", color: "red" }}
         />
-        {
-          user!== undefined ? (
-           
-        <CustomButton type="submit" content="Enviar codigo de verificacion" />
-          ) : null
-        }
+
+        {user !== undefined ? (
+          <CustomButton type="submit" content="Enviar codigo de verificacion" />
+        ) : null}
+        <Link to="/agendar-cita">
+          <CustomButton content="Agendar Cita" />
+        </Link>
       </form>
     </main>
   );

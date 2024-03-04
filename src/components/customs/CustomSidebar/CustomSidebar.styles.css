@@ -1,12 +1,52 @@
-.sidebar {
+/* .sidebar {
     width: 35rem;
-    /* background-color: #353a40; */
-    background: rgb(43, 208, 157);
-    background: linear-gradient(0deg, rgba(43, 208, 157, 1) 0%, rgba(24, 160, 154, 1) 35%, rgba(7, 117, 150, 1)100%);
-    height: 100vh;
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    height: 98vh;
     position: fixed;
     top: 0;
     left: 0;
+    border-radius: 0.75rem;
+    margin: 1rem;
+} */
+.menu-icon {
+    font-size: 2rem;
+    color: #EBEAEB;
+    margin-right: 1.5rem;
+    display: none; /* Initially hide the menu icon */
+  }
+  
+  .sidebar {
+    width: 35rem;
+    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    height: 98vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 0.75rem;
+    margin: 1rem;
+    @media (max-width: 1000px) {
+      transform: translateX(-50rem); /* Hide sidebar on smaller screens */
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+    z-index: 1000;
+  }
+  
+.divider {
+    flex-shrink: 0;
+    border-top: 0px solid rgba(0, 0, 0, 0.08);
+    border-right: 0px solid rgba(0, 0, 0, 0.08);
+    border-left: 0px solid rgba(0, 0, 0, 0.08);
+    height: 0.0625rem;
+    margin: 1rem 0px;
+    border-bottom: none;
+    opacity: 0.25;
+    background-color: transparent;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgba(255, 255, 255, 0)) !important;
+
 }
 
 .sidebar .perfil-usuario {
@@ -15,7 +55,6 @@
     justify-content: center;
     flex-direction: column;
     padding: 2rem;
-    border-bottom: 0.5rem solid #3e434a;
     max-height: 30rem;
 }
 
@@ -64,3 +103,17 @@
 .opcion-sidebar .icon {
     font-size: 3rem;
 }
+
+
+@media (max-width: 1000px) {
+    .menu-icon {
+      display: block;
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        z-index: 1000;
+        margin: 1%;
+        color: rgb(123, 128, 154);
+        font-size: 3rem;
+    }
+  }

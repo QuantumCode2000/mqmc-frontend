@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: rgb(43, 208, 157);
+    background-image: linear-gradient(195deg, rgb(73, 163, 241), rgb(26, 115, 232));
     color: #fff;
     font-size: 2rem;
     border: none;
@@ -13,7 +13,9 @@
     width: 90%;
     height: 5rem;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    background-size: 150% !important;
+    background-position-x: 25% !important;
+    
 }
 
 .custom-button:hover {

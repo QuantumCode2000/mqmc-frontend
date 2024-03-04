@@ -8,6 +8,8 @@ import {
   AdministrarPersonal,
   AgendarCita,
   Casos,
+  Citas,
+  AgendarEspecialista,
 } from "./components/exports";
 const router = createBrowserRouter([
   {
@@ -37,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: "/pacientes",
         element: <Casos />,
+      },
+      {
+        path: "/citas-agendadas",
+        element: <Citas />,
+      },
+      {
+        path: "/agendar-especialista",
+        element : <AgendarEspecialista />
       },
     ],
   },

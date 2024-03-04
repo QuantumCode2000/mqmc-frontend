@@ -1,3 +1,5 @@
+import { especialidades } from "./datosSelect";
+
 const headersPaciente = {
 
   fechaRegistro: "Fecha",
@@ -25,4 +27,19 @@ const headersMedico = {
   correoInstitucional: "Correo",
 };
 
-export { headersPaciente, headersMedico };
+const headersCita = {
+  nombreEncargado: "Encargado",
+  nombrePaciente: "Paciente",
+  motivo: "Motivo",
+  fecha: "Fecha",
+  contacto: "Contacto"
+};
+
+const headersEspecialidad = {
+  especialidad: "Especialidad",
+  soldado: "Soldado",
+  fecha: "Fecha",
+  meetEnlace: "Enlace",
+}
+
+export { headersPaciente, headersMedico, headersCita, headersEspecialidad };

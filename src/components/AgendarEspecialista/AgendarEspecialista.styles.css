@@ -1,0 +1,23 @@
+.agendar-especialista {
+    display: grid ;
+    grid-template-columns: 30% 70%;
+    height: 100%;
+    width: 100%;
+}
+
+.agendar-especialista .agendar-especialista__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.agendar-especialista .agendar-especialista_table {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding :20px;
+}

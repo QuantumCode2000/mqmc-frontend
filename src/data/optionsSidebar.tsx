@@ -35,6 +35,11 @@ const opcionesMedico = [
     text: "Citas Agendadas",
   },
   {
+    to: "/agendar-especialista",
+    icon: <FaFileMedical />,
+    text: "Agendar Especialista",
+  },
+  {
     to: "/logout",
     icon: <GrLogout />,
     text: "Cerrar sesión",

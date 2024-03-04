@@ -12,18 +12,20 @@ const CustomTable = ({ headerData, bodyData }) => {
     return newObj;
   });
   return (
-    <>
-      <table>
-        <thead className='table-head'>
-          {header.map((prop) => (
-            <td key={prop}>{prop}</td>
-          ))}
-        </thead>
-        <tbody className='table-body'>
-          <CustomTableRow data={newBodyData} />
-        </tbody>
-      </table>
-    </>
+    <div className="outer-wrapper">
+      <div className="table-wrapper">
+        <table>
+          <thead className="table-head">
+            {header.map((prop) => (
+              <td key={prop}>{prop}</td>
+            ))}
+          </thead>
+          <tbody className="table-body">
+            <CustomTableRow data={newBodyData} />
+          </tbody>
+        </table>
+      </div>
+    </div>
   );
 };
 

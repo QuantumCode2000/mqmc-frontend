@@ -1,5 +1,3 @@
-import { GiObservatory } from "react-icons/gi";
-
 const usuarios = {
   personal: [
     {
@@ -31,7 +29,7 @@ const usuarios = {
       especialidadMedico: "Medico General",
       division: "DIV. 1",
       unidad: "RA - 3 'PISAGUA'",
-      correoInstitucional: "dactacan@gmail.com",
+      correoInstitucional: "historiasclinicasejercito@gmail.com",
       informacionLaboral: {
         tipoLaboral: "Medico",
         estado: "Activo",
