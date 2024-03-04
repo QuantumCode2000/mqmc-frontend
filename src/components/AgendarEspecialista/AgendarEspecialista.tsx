@@ -32,22 +32,43 @@ const AgendarEspecialista = () => {
   const handleCustomSelect = (e, functionSelect) => {
     functionSelect(e.target.value);
   };
-  const handleSubmit = () => {
-    const listEspecialidades = JSON.parse(
-      window.localStorage.getItem("listEspecialidades") as string
-    );
-    const newEspecialidad = [
-      ...listEspecialidades,
-      { ...data },
-    ];
-    localStorage.setItem("listEspecialidades", JSON.stringify(newEspecialidad));
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Revisar si existe "listEspecialidades" en el local storage
+    const localStorageData = localStorage.getItem("listEspecialidades");
+    let listEspecialidades;
+  
+    if (!localStorageData) {
+      // Si no existe, crear un objeto vacío y guardarlo
+      listEspecialidades = [{
+        especialidad: "",
+        soldado: "",
+        fecha: "",
+        meetEnlace: "",
+      }];
+      localStorage.setItem("listEspecialidades", JSON.stringify(listEspecialidades));
+    } else {
+      // Si ya existe, convertirlo a un array
+      listEspecialidades = JSON.parse(localStorageData);
+    }
+  
+    // Agregar la nueva cita a la lista
+    const newEspecialidad = {
+      ...data,
+    };
+    listEspecialidades.push(newEspecialidad);
+  
+    // Actualizar el local storage con la lista actualizada
+    localStorage.setItem("listEspecialidades", JSON.stringify(listEspecialidades));
+  
+    // Resetear el estado del formulario
     setData({
       especialidad: "",
       soldado: "",
       fecha: "",
-      meetEnlace : ""
+      meetEnlace: "",
     });
-  }
+  };
   return (
     <main className="window-content">
       <div className="agendar-especialista">
@@ -108,7 +129,20 @@ const AgendarEspecialista = () => {
         <div className="agendar-especialista_table">
             <CustomTable 
             headerData={headersEspecialidad}
-            bodyData={JSON.parse(localStorage.getItem("listEspecialidades") as string)}
+
+            bodyData={
+              localStorage.getItem("listEspecialidades")
+  ? JSON.parse(localStorage.getItem("listEspecialidades") as string)
+  : [
+    {
+      especialidad: "",
+      soldado: "",
+      fecha: "",
+      meetEnlace : ""
+    }
+  ]
+            }
+
             />
         </div>
       </div>
