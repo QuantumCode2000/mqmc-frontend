@@ -2,15 +2,22 @@ import { GrUserAdd, GrUserSettings, GrLogout } from "react-icons/gr";
 import { FaFileMedical } from "react-icons/fa";
 import { BsFileEarmarkMedical } from "react-icons/bs";
 const opcionesAdmin = [
-  {
-    to: "/administrar-pacientes",
-    icon: <GrUserAdd />,
-    text: "Administrar Paciente",
-  },
+ 
   {
     to: "/administrar-personal",
     icon: <GrUserSettings />,
-    text: "Administrar Personal",
+    text: "Administrar Usuarios",
+  },
+  {
+    to: "/preguntas-respuestas",
+    icon: <GrUserSettings />,
+    text: "Preguntas",
+  },
+  {
+    to:"reportes",
+    icon:<GrUserSettings />,
+    text:"Reportes"
+
   },
   {
     to: "/logout",

@@ -1,119 +1,112 @@
-/* .sidebar {
-    width: 35rem;
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
-    height: 98vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 0.75rem;
-    margin: 1rem;
-} */
 .menu-icon {
-    font-size: 2rem;
-    color: #EBEAEB;
-    margin-right: 1.5rem;
-    display: none; /* Initially hide the menu icon */
-  }
-  
-  .sidebar {
-    width: 35rem;
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
-    height: 98vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    border-radius: 0.75rem;
-    margin: 1rem;
-    @media (max-width: 1000px) {
-      transform: translateX(-50rem); /* Hide sidebar on smaller screens */
-      transition: transform 0.3s ease-in-out;
-    }
-  }
+  font-size: 2rem;
+  color: #ebeaeb;
+  margin-right: 1.5rem;
+  display: none; /* Initially hide the menu icon */
+}
 
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar when active */
-    z-index: 1000;
+.sidebar {
+  width: 35rem;
+  /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
+    background: linear-gradient(195deg, rgb(25, 25, 25), rgb(25, 25, 25)); */
+
+  /* background: rgb(255, 255, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(236, 232, 233, 1) 35%,
+    rgba(220, 223, 224, 1) 100%
+  ); */
+  background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
+  height: 98vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 0.75rem;
+  margin: 1rem;
+  @media (max-width: 1000px) {
+    transform: translateX(-50rem); /* Hide sidebar on smaller screens */
+    transition: transform 0.3s ease-in-out;
   }
-  
+}
+
+.sidebar.active {
+  transform: translateX(0); /* Show sidebar when active */
+  z-index: 1000;
+}
+
 .divider {
-    flex-shrink: 0;
-    border-top: 0px solid rgba(0, 0, 0, 0.08);
-    border-right: 0px solid rgba(0, 0, 0, 0.08);
-    border-left: 0px solid rgba(0, 0, 0, 0.08);
-    height: 0.0625rem;
-    margin: 1rem 0px;
-    border-bottom: none;
-    opacity: 0.25;
-    background-color: transparent;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgb(255, 255, 255), rgba(255, 255, 255, 0)) !important;
-
+  flex-shrink: 0;
+  border-top: 0px solid rgba(0, 0, 0, 0.08);
+  border-right: 0px solid rgba(0, 0, 0, 0.08);
+  border-left: 0px solid rgba(0, 0, 0, 0.08);
+  height: 0.0625rem;
+  margin: 1rem 0px;
+  border-bottom: none;
+  opacity: 0.25;
+  background-color: transparent;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0)
+  ) !important;
 }
 
-.sidebar .perfil-usuario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 2rem;
-    max-height: 30rem;
+.sidebar .icon-sidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem;
+  max-height: 30rem;
 }
 
-.sidebar .perfil-usuario img {
-    width: 15rem;
-    height: 15rem;
-    border-radius: 50%;
-    margin-bottom: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.sidebar .perfil-usuario .text-perfil {
-    font-size: 2rem;
-    letter-spacing: 0.2rem;
-    font-weight: 500;
-    color: #EBEAEB;
+.sidebar .icon-sidebar img {
+  width: 50%;
+  margin-bottom: 1rem;
 }
 
 .sidebar .opciones-sidebar .opcion-sidebar {
-    display: flex;
-    align-items: center;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 1rem;
-    flex-direction: center;
-    color: #EBEAEB;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem;
+  flex-direction: center;
+  color: black;
 }
 
 .sidebar .opciones-sidebar .opcion-sidebar:hover {
-    /* background-color: #3085d6; */
-    background-color: #0EB0C5;
-    border-radius: 0.5rem;
+  /* background-color: #3085d6; */
+  background-color: #0eb0c5;
+  border-radius: 0.5rem;
 }
 
 .sidebar a {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .opcion-sidebar .text-opcion {
-    margin-left: 1.5rem;
-    letter-spacing: 0.2rem;
-    font-size: 1.8rem;
+  margin-left: 1.5rem;
+  letter-spacing: 0.2rem;
+  font-size: 1.8rem;
 }
 
 .opcion-sidebar .icon {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
-
 @media (max-width: 1000px) {
-    .menu-icon {
-      display: block;
-        position: absolute;
-        top: 1.5rem;
-        left: 1.5rem;
-        z-index: 1000;
-        margin: 1%;
-        color: rgb(123, 128, 154);
-        font-size: 3rem;
-    }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    z-index: 1000;
+    margin: 1%;
+    color: rgb(123, 128, 154);
+    font-size: 3rem;
   }
+}
