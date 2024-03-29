@@ -8,7 +8,7 @@ const PrivateRoute = () => {
   const { isAuthenticated } = useContext(AuthContext);
 
   if (!isAuthenticated) {
-    return <Navigate to='/login' />;
+    return <Navigate to='/home' />;
   }
   return (
     <>

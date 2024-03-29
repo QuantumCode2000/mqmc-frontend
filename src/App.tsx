@@ -1,6 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Login, Logout } from "./views/exports";
+import { Login, Logout,Home } from "./views/exports";
 import {
   NuevoPaciente,
   PrivateRoute,
@@ -57,6 +57,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <h1>Public</h1>,
+      },
+      {
+        path: "/home",
+        element: <Home />,
       },
       {
         path: "/login",

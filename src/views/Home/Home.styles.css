@@ -1,0 +1,15 @@
+.main-home .container-main__buttons .sticky-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 100;
+  background-color: #fffbff;
+  border: 0.1rem solid #212428;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 0 0.5rem #212428;
+  font-size: 1.6rem;
+  color: #212428;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
