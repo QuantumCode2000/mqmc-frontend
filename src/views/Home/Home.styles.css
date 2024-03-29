@@ -13,3 +13,11 @@
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
+
+.container-main__mesagge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: blue;
+}
