@@ -6,16 +6,17 @@ import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import "./Home.styles.css";
 const Home = () => {
   return (
-    <div className="container-without_sidebar">
-      <header style={{ background: "red" }} className="header-home">
-        <div>
-          <img src={Logo_2} alt="" />
-          <img src={LOGO_principal} alt="" />
+    <div className="container-without_sidebar home-view">
+      
+      <header className="header-home">
+        <div className="encabezado">
+          <img src={Logo_2} alt="" className="logo2" />
+          <img src={LOGO_principal} alt="" className="logoprincipal" />
         </div>
       </header>
       <main className="main-home">
         <div className="container-main__mesagge">
-          <img src={PORTADA_PRINCIPAL} alt="" />
+          <img src={PORTADA_PRINCIPAL} alt="" className="logofondo" />
           <div className="text-main">
             <p className="lightgreen-text">ME QUIERO</p>
             <p className="darkgreen-text">, ME CUIDO</p>

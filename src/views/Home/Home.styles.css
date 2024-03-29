@@ -1,3 +1,86 @@
+.home-view {
+  /* display: flex !important; */
+  height: 100vh !important;
+  border: 6px solid red;
+  position: relative !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.header-home {
+  width: 100%;
+  height: 80px;
+  padding-left: 24px;
+  padding-right: 24px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+  background-color: white;
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.header-home .encabezado {
+  background-color: white;
+  width: 30%;
+  height: fit-content;
+  z-index: 100;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 4px;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  padding-bottom: 30px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+}
+
+.header-home .encabezado img {
+  height: 80px;
+  
+}
+.header-home .encabezado .logo2 {
+  
+  
+  
+}
+
+.header-home .encabezado .logoprincipal {
+ 
+  
+}
+
+.main-home {
+  width: 60%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+}
+
+.main-home .container-main__mesagge {
+  background-color: rgb(249, 239, 183);
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+
+}
+
+.main-home .container-main__buttons {
+  background-color: white;
+  height: 50%;
+}
+
+
+.logofondo {
+  margin: 2rem;
+  width: 80%;
+}
+
 .main-home .container-main__buttons .sticky-button {
   position: fixed;
   bottom: 2rem;
@@ -15,9 +98,46 @@
 }
 
 .container-main__mesagge {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  background-color: green;
+  font-size: 20px;
+  font-style: normal;
+
+  line-height: 24px;
+  text-align: center;
 }
+
+/* .container-main__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+} */
+
+.footer-home {
+  width: 100%;
+  height: 50px;
+  padding-top: 16px;
+  padding-bottom: 18px;
+  background-color: rgb(147, 183, 59);
+  /* display: flex;
+  justify-content: center;
+  flex-direction: column ;
+  align-items: center; */
+  color: white;
+  position: absolute;
+  bottom: 0;
+ 
+}
+
+.footer-home .redes-sociales__footer {
+  display: flex;
+  justify-content: space-around;
+  width: 8%;
+
+  margin-bottom: 12px;
+}
+
+.footer-home p {
+  font-size: 10px;
+  line-height: 12px;
+}
+
