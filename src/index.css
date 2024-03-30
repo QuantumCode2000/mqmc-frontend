@@ -20,12 +20,13 @@ body {
 
 
 .window-content {
-  width: calc(100vw - 40rem);
-  border: gray 0.3rem solid;
-  margin: 1.5rem;
+  max-width: calc(100vw - 38rem);
+  /* margin: 1.5rem; */
   border-radius: 0.5rem;
-  padding: 1.5rem;
-  box-shadow: 0 0 0.5rem #212428;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  padding-top: 5rem;
+  box-shadow: 0 0 0.5rem #90959b;
   background-color: #fffbff;
   position: relative;
   top: 0;

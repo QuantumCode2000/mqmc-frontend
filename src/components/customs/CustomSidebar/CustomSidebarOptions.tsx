@@ -22,9 +22,10 @@ const CustomSidebarOptions = ({ data_user, opciones ,sidActive}) => {
         <img src={Logo_principal} alt="" />
         <h1>{data_user.informacionLaboral.nivelJerarquico}</h1>
       </div>
-      <div className="divider">
+      <div className="line"></div>
+      {/* <div className="divider">
       
-      </div>
+      </div> */}
       <div className='opciones-sidebar '>
         {opciones.map((opcion, index) => {
           return (

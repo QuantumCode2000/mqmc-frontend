@@ -20,6 +20,7 @@ const CustomSidebar = () => {
         
       </div>
     </header>
+    
       <CustomSidebarOptions data_user={data_user} opciones={opciones} sidActive={sidActive} />
       <div className="menu-icon" onClick={() => setSidActive(!sidActive)}> 
         <IoMdMenu />
