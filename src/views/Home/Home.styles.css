@@ -1,23 +1,14 @@
-.home-view {
-  /* display: flex !important; */
-  height: 100vh !important;
-  border: 6px solid red;
-  position: relative !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
 .header-home {
   width: 100%;
   height: 80px;
   padding-left: 24px;
   padding-right: 24px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
-    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
   background-color: white;
   padding-top: 0;
   display: flex;
   justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
 }
 
 .header-home .encabezado {
@@ -39,105 +30,191 @@
 
 .header-home .encabezado img {
   height: 80px;
-  
-}
-.header-home .encabezado .logo2 {
-  
-  
-  
-}
-
-.header-home .encabezado .logoprincipal {
- 
-  
 }
 
 .main-home {
-  width: 60%;
-  background-color: white;
+  width: 100%;
+  background-color: none;
+
+  min-height: calc(100vh - 50px);
   display: flex;
   flex-direction: column;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: center;
+}
+
+.main-home .main-box {
+  width: 60%;
+  min-height: calc(100vh - 50px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  background-color: #fff;
 }
 
-.main-home .container-main__mesagge {
+.main-home .main-box .container-main__mesagge {
+  width: 100%;
   background-color: rgb(249, 239, 183);
-  border-bottom-left-radius: 22px;
-  border-bottom-right-radius: 22px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-home .main-box .container-main__mesagge .text-main {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 30%;
+  font-size: 20px;
+  font-style: normal;
+  line-height: 24px;
+  text-align: center;
+}
+
+.main-home .main-box .container-main__mesagge .text-welcome {
+  font-size: 20px;
+  padding-bottom: 30px;
 
 }
 
-.main-home .container-main__buttons {
+.main-home .main-box .container-main__mesagge .darkgreen-text {
+  font-weight: 900;
+  color: #034337;
+}
+.main-home .main-box .container-main__mesagge .text-main .lightgreen-text {
+  font-weight: 900;
+  color: #89b237;
+}
+
+.main-home .main-box .container-main__buttons {
+  background-color: #fff;
+  height: fit-content;
+  min-height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.main-home .main-box .container-main__buttons .terminos-condiciones{
+  font-size: 14px;
+  color: #12c185;
+  text-decoration-line: underline;
+  
+}
+.main-home .main-box .container-main__buttons .footer-img{
+  height: 80px;
+}
+.main-home .main-box .container-main__buttons .button-ingresar {
+  width: 200px;
+  height: 46px;
+  border-radius: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  cursor: pointer;
+  color: rgb(18, 193, 133);
+  font-weight: 900;
+  border: 2px solid rgb(18, 193, 133);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+    rgba(0, 0, 0, 0.14) 0px 2px 2px 0px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+  letter-spacing: 0.02857em;
   background-color: white;
-  height: 50%;
 }
-
 
 .logofondo {
   margin: 2rem;
   width: 80%;
 }
 
-.main-home .container-main__buttons .sticky-button {
+.main-home .container-main__buttons .sticky-button__chatbot {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
   z-index: 100;
-  background-color: green;
-  border: 0.1rem solid #212428;
-  border-radius: 0.5rem;
+  background-color: white;
   padding: 0.5rem 1rem;
-  box-shadow: 0 0 0.5rem #212428;
-  font-size: 1.6rem;
-  color: #212428;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  /* transition: background-color 0.3s, color 0.3s; */
+  border-radius: 50%;
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+  border: 2px solid rgb(147, 183, 59);
+  width: 120px;
+  height: 110px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
 }
 
-.container-main__mesagge {
-  font-size: 20px;
-  font-style: normal;
-
-  line-height: 24px;
-  text-align: center;
+/* cuando pose el mouse encima del sticky-button quiero que este contenedor de  empieze a girar  */
+.main-home .container-main__buttons .sticky-button__chatbot:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
 }
 
-/* .container-main__buttons {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
-} */
+.main-home .container-main__buttons .sticky-button__mascota {
+  position: fixed;
+  bottom: 15rem;
+  right: 2rem;
+  z-index: 100;
+  background-color: white;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid rgb(147, 183, 59);
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px -1px,
+    rgba(0, 0, 0, 0.14) 0px 6px 10px 0px, rgba(0, 0, 0, 0.12) 0px 1px 18px 0px;
+  overflow: hidden;
+  width: 120px;
+  height: 110px;
+  -webkit-transition: 1s linear;
+  transition: 1s linear;
+}
+.main-home .container-main__buttons .sticky-button__mascota:hover {
+  -webkit-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.main-home .container-main__buttons .sticky-button__mascota img {
+  animation: rebote 1.4s infinite linear;
+}
+@keyframes rebote {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
 .footer-home {
-  width: 100%;
-  height: 50px;
-  padding-top: 16px;
-  padding-bottom: 18px;
   background-color: rgb(147, 183, 59);
-  /* display: flex;
+  height: 85px;
+  display: flex;
   justify-content: center;
-  flex-direction: column ;
-  align-items: center; */
+  align-items: center;
+  flex-direction: column;
   color: white;
-  position: absolute;
-  bottom: 0;
- 
 }
 
 .footer-home .redes-sociales__footer {
   display: flex;
   justify-content: space-around;
   width: 8%;
-
+  margin-top: 12px;
   margin-bottom: 12px;
+  font-size: 20px;
 }
 
 .footer-home p {
   font-size: 10px;
   line-height: 12px;
+  margin-bottom: 18px;
 }
-

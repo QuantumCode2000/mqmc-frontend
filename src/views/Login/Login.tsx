@@ -1,4 +1,11 @@
 import "./Login.styles.css";
+import Logo_2 from "../../assets/images/Logo_2.png";
+import LOGO_principal from "../../assets/images/LOGO_principal.png";
+import PORTADA_PRINCIPAL from "../../assets/images/PORTADA_PRINCIPAL.png";
+import mascota_1 from "../../assets/images/mascota_1.png";
+import footer_img from "../../assets/images/footer.jpg";
+import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
+import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import CustomInput from "../../components/customs/CustomInput/CustomInput";
 import CustomButton from "../../components/customs/CustomButton/CustomButton";
@@ -50,16 +57,18 @@ const Login = () => {
         updateListPersonal(listUsers.personal);
       }
     }
-    if(user !== undefined && loginDate.username === "admin" && clave === 1111){ 
+    if (
+      user !== undefined &&
+      loginDate.username === "admin" &&
+      clave === 1111
+    ) {
       Login();
       updateUserInfo(user);
       if (!window.localStorage.getItem("listPacientes")) {
         updateListPacientes(listUsers.pacientes);
         updateListPersonal(listUsers.personal);
       }
-    }
-    
-    else {
+    } else {
       alert("Usuario incorrecto");
     }
   };
@@ -92,79 +101,105 @@ const Login = () => {
     form.current.user_email.value = user.correoInstitucional;
     // quiero que mesaggue sea un numero de 4 digitos aleatorio
     if (loginDate.username === "admin") {
-      console.log("si entro")
+      console.log("si entro");
       form.current.message.value = 1111;
-    }else{
+    } else {
       form.current.message.value = clave;
     }
-    
   }
   console.log(clave);
 
   return (
-    <main className="container-without_sidebar">
-      <form action="" onSubmit={handleSubmit} className="login-container">
-        <h1 className="login-title">Iniciar Sesion</h1>
+    <div className="home-view">
+      <header className="header-home">
+        <div className="encabezado">
+          <img src={Logo_2} alt="" className="logo2" />
+          <img src={LOGO_principal} alt="" className="logoprincipal" />
+        </div>
+      </header>
+      <main className="main-home">
+        <div className="main-box__login">
+          <div className="container-main__mesagge">
+            <main className="container-without_sidebar">
+              <form
+                action=""
+                onSubmit={handleSubmit}
+                className="login-container"
+              >
+                <h1 className="login-title">Iniciar Sesion</h1>
 
-        <CustomInput
-          type="text"
-          placeholder="Usuario"
-          value={loginDate.username}
-          onChange={handleInputChange}
-          name="username"
-        />
-        <CustomInput
-          type="password"
-          placeholder="Contraseña"
-          value={loginDate.password}
-          onChange={handleInputChange}
-          name="password"
-        />
-        {user !== undefined ? (
-          <CustomInput
-            type="text"
-            placeholder="Codigo"
-            value={loginDate.codigo}
-            onChange={handleInputChange}
-            name="codigo"
-          />
-        ) : null}
-        <CustomButton type="submit" content="Iniciar Sesion" />
-      </form>
+                <CustomInput
+                label="Usuario"
+                  type="text"
+                  placeholder="Usuario"
+                  value={loginDate.username}
+                  onChange={handleInputChange}
+                  name="username"
+                />
+                <CustomInput
+                label="Contraseña"
+                  type="password"
+                  placeholder="Contraseña"
+                  value={loginDate.password}
+                  onChange={handleInputChange}
+                  name="password"
+                />
+                {user !== undefined ? (
+                  <CustomInput
+                    type="text"
+                    placeholder="Codigo"
+                    value={loginDate.codigo}
+                    onChange={handleInputChange}
+                    name="codigo"
+                  />
+                ) : null}
+                <CustomButton type="submit" content="Iniciar Sesion" />
+              </form>
 
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+              <form ref={form} onSubmit={sendEmail}>
+                <input
+                  type="text"
+                  className="user_name"
+                  name="user_name"
+                  style={{ display: "none", color: "red" }}
+                />
+                <input
+                  type="email"
+                  className="user_email"
+                  name="user_email"
+                  style={{ display: "none", color: "red" }}
+                />
+                <textarea
+                  className="message"
+                  name="message"
+                  style={{ display: "none", color: "red" }}
+                />
 
-      <form ref={form} onSubmit={sendEmail}>
-        <input
-          type="text"
-          className="user_name"
-          name="user_name"
-          style={{ display: "none", color: "red" }}
-        />
-        <input
-          type="email"
-          className="user_email"
-          name="user_email"
-          style={{ display: "none", color: "red" }}
-        />
-        <textarea
-          className="message"
-          name="message"
-          style={{ display: "none", color: "red" }}
-        />
+                {user !== undefined ? (
+                  <CustomButton
+                    type="submit"
+                    content="Enviar codigo de verificacion"
+                  />
+                ) : null}
+              </form>
+            </main>
+          </div>
 
-        {user !== undefined ? (
-          <CustomButton type="submit" content="Enviar codigo de verificacion" />
-        ) : null}
-        <Link to="/agendar-cita">
-          <CustomButton content="Agendar Cita" />
-        </Link>
-      </form>
-    </main>
+          <div className="container-main__buttons">
+            <img src={footer_img} alt="" className="footer-img" />
+          </div>
+        </div>
+      </main>
+
+      <footer className="footer-home">
+        <div className="redes-sociales__footer">
+          <BsTiktok />
+          <BsFacebook />
+          <BsInstagram />
+        </div>
+        <p>Me quiero, Me cuido 2022</p>
+      </footer>
+    </div>
   );
 };
 
