@@ -7,23 +7,13 @@
 
 .sidebar {
   width: 35rem;
-  /* background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
-    background: linear-gradient(195deg, rgb(25, 25, 25), rgb(25, 25, 25)); */
-
-  /* background: rgb(255, 255, 255);
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(236, 232, 233, 1) 35%,
-    rgba(220, 223, 224, 1) 100%
-  ); */
-  background-image: linear-gradient(to bottom right, #FDFCFB, #E2D1C3);
-  height: 98vh;
+  background-color: #87bc1f;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  border-radius: 0.75rem;
-  margin: 1rem;
+  /* border-radius: 36px; */
+  /* margin: 1rem; */
   @media (max-width: 1000px) {
     transform: translateX(-50rem); /* Hide sidebar on smaller screens */
     transition: transform 0.3s ease-in-out;
@@ -75,13 +65,13 @@
   transition: all 0.3s ease;
   margin: 1rem;
   flex-direction: center;
-  color: black;
+  color: #034337;
 }
 
 .sidebar .opciones-sidebar .opcion-sidebar:hover {
-  /* background-color: #3085d6; */
-  background-color: #0eb0c5;
+  background-color: #034337;
   border-radius: 0.5rem;
+  color: #87bc1f;
 }
 
 .sidebar a {
@@ -92,6 +82,7 @@
   margin-left: 1.5rem;
   letter-spacing: 0.2rem;
   font-size: 1.8rem;
+  font-weight: 800;
 }
 
 .opcion-sidebar .icon {
