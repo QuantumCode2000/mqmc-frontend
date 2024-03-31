@@ -1,153 +1,111 @@
-/* .table-head {
-    background-color: black;
-    color: #ddd;
-    height: 5rem;
-}
-
-.table-head td {
-    padding: 0 1rem;
-    font-weight: 500;
-    font-size: 2rem;
-}
-
-.table-body {
-    background-color: #ddd;
-    height: 100%;
-
-}
-
-.table-body tr {
-    height: 5rem;
-}
-
-.table-body tr td {
-    padding: 0 1rem;
-
-} */
-
-
-
-
-
 .outer-wrapper {
-    margin: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    border: 1px solid black;
-    border-radius: 4px;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9);
-    max-width: fit-content;
+    margin: 15px;
+    border: 1px solid #fffdfd;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(184, 153, 153, 0.9);
     max-height: fit-content;
+    
 }
 .table-wrapper {
-
     overflow-y: scroll;
-    overflow-x: scroll;
+    /* overflow-x: scroll; */
     height: fit-content;
     max-height: 40vh;
     margin-top: 22px;
     margin: 5px;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
 }
 
 
-table {
+.table-wrapper::-webkit-scrollbar {
+    width: 8px;     
+    height: 10px;    
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 6px;
+}
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:active {
+    background-color: #999999;
+}
+.table-wrapper::-webkit-scrollbar-track {
+    background: #cae2cb;
+    border-radius: 4px;
+}
+
+.table-wrapper::-webkit-scrollbar-track:hover,
+.table-wrapper::-webkit-scrollbar-track:active {
+  background: #d4d4d4;
+}
+
+
+
+   table {
     width: 100%;
-    /* min-width: max-content; */
-    border-collapse: coollapse;
-    border-spacing: 0px;    
+    border-collapse: collapse;
+    background-color: white;
+    
 }
 
+table-head {
+    width: min(900px, 100% - 3rem);
+    margin-inline: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #323232;
+}
 
+table-body {
+    width: min(900px, 100% - 3rem);
+    margin-inline: auto;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #323232;
+}
 
-table th{
-    position: sticky; 
-    top: 0px; 
-    background-color: #133b5c;
-    color: rgb(241, 245, 179); 
-    text-align: center;
-    font-weight: normal;
-    font-size: 18px;
-    outline: 0.7px solid black;
-    border: 1.5px solid black;
+tr{
+    text-align: left;
+    /* background: hsl(0, 8%, 97%); */
+    background: hsla(0, 0%, 100%, 0.904); 
+    
+}
+
+tr:nth-of-type(2n) {
+    background: hsla(0, 0%, 100%, 0.904); 
+    
+}
+
+tr, td {
+    /* border: 1px solid #391414; */
+    text-align: left;
+    padding: 15px; 
+    border-bottom: 0.0625rem solid rgb(240, 242, 245);
+    
 } 
-
-
-
-table th, table td {
-    
-    padding: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    
-}
-
 table td {
     text-align: left;
-    font-size: 15px;
-    border: 1px solid rgb(177, 177, 177);
+    font-size: 13px;
     padding-left: 20px;
-    
-} */
+    color: black;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif !important;
 
-table {
-    width: 100%; /* Adjust width as needed */
-    
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
-  .table-head {
-    background: linear-gradient(195deg, rgb(66, 66, 74), rgb(25, 25, 25));
-        color: #ddd; /* Adjust text color for better contrast */
-        text-align: center;
-        font-weight: normal;
-        font-size: 18px;
-        padding: 15px;
-        position: sticky;
-        top: 0;
-        z-index: 1; /* Ensure headers stay visible when scrolling */
-        border: 1px solid #000;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        outline: none; /* Remove unnecessary outline */
-      }
-  
-  /* Table header */
-  table th {
-    background-color: #133b5c;
-    color: #f1f5b3; /* Adjust text color for better contrast */
-    text-align: center;
-    font-weight: normal;
-    font-size: 18px;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 1; /* Ensure headers stay visible when scrolling */
-    border: 1px solid #000;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    outline: none; /* Remove unnecessary outline */
-  }
-  
-  /* Table body */
-  table td {
+}
+
+.table-head td {
     text-align: left;
-    font-size: 15px;
-    padding: 15px; /* Adjust padding as needed */
-    border: 1px solid #ddd;
-  }
-  
-  /* Outer wrapper */
-  .outer-wrapper {
-    margin: 10px auto; /* Center the table horizontally */
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    max-width: 800px; /* Adjust maximum width as needed */
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Subtle box-shadow for depth */
-  }
-  
-  /* Table wrapper */
-  .table-wrapper {
-    overflow: auto; /* Enable scrolling for large tables */
-    padding-bottom: 10px; /* Prevent content from being hidden under horizontal scrollbar */
-  }
+    font-size: 13px;
+    padding-left: 20px;
+    color: rgb(186, 163, 163);
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif !important;
+
+}
+
+
