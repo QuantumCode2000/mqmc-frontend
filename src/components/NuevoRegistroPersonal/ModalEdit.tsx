@@ -5,7 +5,7 @@ import { especialidades, expediciones } from "../../data/datosSelect";
 import { useState, useContext } from "react";
 import UsersContext from "../../context/UsersContext";
 import "./ModalNuevoRegistro.styles.css"
-const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
+const ModalEdit = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   const { updateListPersonal } = useContext(UsersContext);
   const personalLocalStorage = JSON.parse(
     window.localStorage.getItem("listPersonal") as string
@@ -92,32 +92,8 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
     <div className="overlay ">
       <div className="modal-nuevo-registro">
-        <h2>Informacion Personal</h2>
+        <h2>Editar informacion </h2>
         <form className="inputs-box" onSubmit={handleSubmit}>
-          <CustomInput
-            type="text"
-            placeholder="Nombre Completo"
-            name="nombresApellidos"
-            required
-            value={inforPersonal.nombresApellidos}
-            onChange={handleChangePersonal}
-          />
-          <CustomInput
-            type="number"
-            placeholder="Carnet de Identidad"
-            name="documento"
-            required
-            value={inforPersonal.documento}
-            onChange={handleChangePersonal}
-          />
-          <CustomSelect
-            name="expedicion"
-            arrayOptionsSelect={expediciones}
-            onChange={(e) => {
-              handleCustomSelect(e, setSelectExpedicion);
-            }}
-            value={selectExpedicion}
-          />
 
           <CustomInput
             type="text"
@@ -160,11 +136,11 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
               onClose();
             }}
           />
-          <CustomButton content="Guardar" onClick={handleSubmit} />
+          <CustomButton content="Editar" onClick={handleSubmit} />
         </div>
       </div>
     </div>
   );
 };
 
-export default Modal;
+export default ModalEdit;

@@ -18,13 +18,15 @@ const headersPaciente = {
 };
 const headersMedico = {
   nombresApellidos: "Nombres",
-  especialidadMedico: "Especialidad",
   documento: "CI",
   expedicion: "Expedicion",
-  unidad: "Unidad",
   nombreUsuario: "Usuario",
   password: "Contraseña",
   correoInstitucional: "Correo",
+  status: "Habilitado",
+  rol: "Rol",
+  editar: "Editar",
+
 };
 
 const headersCita = {

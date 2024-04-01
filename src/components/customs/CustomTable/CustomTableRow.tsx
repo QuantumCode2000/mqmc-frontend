@@ -1,26 +1,19 @@
 import PropTypes from "prop-types";
+import Row from "./Row";
 
+const CustomTableRow = ({ users, bodyData,actualizarEstado  }) => {
+  const keys = Object.keys(bodyData[0]);
+  return (
+    <>
+      {bodyData.map((user) => (
+        <Row user={user} keys={keys} users={users} actualizarEstado={actualizarEstado} />
+      ))}
+    </>
+  );
+};
 
-const CustomTableRow = ({ data }) => {
-    const objects = data;
-    const keysData = Object.keys(objects[0]);
-    return (
-        <>
-            { objects.map((object) => (
-                <tr key={ object.id }>
-                    {
-                        keysData.map((key) => (
-                            <td key={ key }>{ object[key] }</td>
-                        ))
-                    }
-                </tr>
-            )) }
-        </>
-    )
-}
+// CustomTableRow.propTypes = {
+//   data: PropTypes.array
+// };
 
-CustomTableRow.propTypes = {
-    data: PropTypes.object,
-}
-
-export default CustomTableRow
+export default CustomTableRow;

@@ -1,27 +1,29 @@
 import PropTypes from "prop-types";
 import CustomTableRow from "./CustomTableRow";
 import "./CustomTable.styles.css";
-const CustomTable = ({ headerData, bodyData }) => {
-  const header = Object.values(headerData);
-  // quiero extraer todos los values que tengan las key que contiene el array headerKey de el objeto body data
-  const newBodyData = bodyData.map((obj) => {
-    const newObj = {};
+const CustomTable = ({ headerData, bodyData,actualizarEstado }) => {
+  console.log("bodyData", bodyData)
+  const headers = Object.values(headerData);
+  const newbodyData = bodyData.map((user) => {
+    const newUsers = {};
     Object.keys(headerData).forEach((key) => {
-      newObj[key] = obj[key] !== undefined ? obj[key] : "";
+      newUsers[key] = user[key] !== undefined ? user[key] : "";
     });
-    return newObj;
+    return newUsers;
+    
   });
   return (
     <div className="outer-wrapper">
       <div className="table-wrapper">
         <table>
           <thead className="table-head">
-            {header.map((prop) => (
-              <td key={prop}>{prop}</td>
+            {headers.map((header,index) => (
+              <td key={index}>{header}</td>
             ))}
           </thead>
+          
           <tbody className="table-body">
-            <CustomTableRow data={newBodyData} />
+            <CustomTableRow bodyData={newbodyData} users={bodyData} actualizarEstado={actualizarEstado} />
           </tbody>
         </table>
       </div>
@@ -31,7 +33,7 @@ const CustomTable = ({ headerData, bodyData }) => {
 
 CustomTable.propTypes = {
   headerData: PropTypes.object,
-  bodyData: PropTypes.object,
+  bodyData: PropTypes.array,
 };
 
 export default CustomTable;
