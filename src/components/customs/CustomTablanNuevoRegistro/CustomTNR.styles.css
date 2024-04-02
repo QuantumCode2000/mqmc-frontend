@@ -1,31 +1,51 @@
 .centerTRN {
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr; */
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
-    grid-auto-rows: minmax(5rem, auto);
-    width: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  /* grid-template-rows: repeat(2, 1fr); */
+  grid-template-rows: auto 2fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
-.buscar {
-    grid-column-start: 1;
-    grid-column-end: 4;
+.centerTRN .search-for__customtnr {
+  display: grid;
+  grid-area: 1 / 1 / 2 / 2;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 1fr;
+  align-items: center;
+}
+.centerTRN .tabla {
+  grid-area: 2 / 1 / 3 / 2;
 }
 
-.boton-buscar {
-    grid-column-start: 4;
-    grid-column-end: 5;
+.centerTRN .search-for__customtnr input {
+  width: 100%;
+  height: 5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-.tabla {
-    grid-column-start: 1;
-    grid-column-end: 5;
+.centerTRN
+  .search-for__customtnr
+  input[type="number"]::-webkit-inner-spin-button,
+.centerTRN
+  .search-for__customtnr
+  input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.nuevo-registro {
-    grid-column-start: 4;
-    grid-column-end: 5;
+.centerTRN .search-for__customtnr input[type="number"] {
+  -moz-appearance: textfield;
 }
+.centerTRN .search-for__customtnr button {
+  width: 90%;
+  height: 5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #008346;
+}
+

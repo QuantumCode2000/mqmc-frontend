@@ -10,8 +10,8 @@ const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(() =>
     window.localStorage.getItem(MY_AUTH_APP)
   );
-  const [inforUser, setUserInfo] = useState(
-    () => JSON.parse(window.localStorage.getItem("inforUser") as string) || {}
+  const [currentUserInformation, setCurrentUserInformation] = useState(
+    () => JSON.parse(window.localStorage.getItem("currentUser") as string) || {}
   );
 
   const Login = () => {
@@ -20,21 +20,21 @@ const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
   };
   const Logout = () => {
     window.localStorage.removeItem(MY_AUTH_APP);
-    window.localStorage.removeItem("inforUser");
+    window.localStorage.removeItem("currentUser");
     // window.localStorage.removeItem("listPacientes");
     setIsAuthenticated(false);
   };
-  const updateUserInfo = (info) => {
-    window.localStorage.setItem("inforUser", JSON.stringify(info));
-    setUserInfo(info);
+  const updateCurrentUserInformation = (info) => {
+    window.localStorage.setItem("currentUser", JSON.stringify(info));
+    setCurrentUserInformation(info);
   };
 
   const value = {
     isAuthenticated,
     Login,
     Logout,
-    inforUser,
-    updateUserInfo,
+    currentUserInformation,
+    updateCurrentUserInformation,
   };
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };

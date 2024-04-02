@@ -2,107 +2,64 @@ import CustomInput from "../CustomInput/CustomInput";
 import CustomButton from "../CustomButton/CustomButton";
 import CustomTable from "../CustomTable/CustomTable";
 import "./CustomTNR.styles.css";
-import { filtrarPorDocumento } from "../../../services/filtrados"
-import { useState, useContext } from "react";
-import UsersContext from "../../../context/UsersContext";
-const CustomTNR = ({headers,users}) => {
-  const { personal } = useContext(UsersContext);
-  const [personalFilter, setPersonalFilter] = useState(
-    typeof (personal) === "string" ?
-      JSON.parse(personal)
-      : personal
-  );
-  const [valorDocumento, setValorDocumento] = useState('');
+import { useState } from "react";
+const CustomTNR = ({ headers, users , placeholder}) => {
+  const [ci, setCI] = useState("");
+  const [bodyData, setBodyData] = useState(users);
+  const handleCIChange = (event) => {
+    setCI(event.target.value);
+    if (event.target.value === "") {
+      setBodyData(users);
+    }
+    
+  };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    const filtered = users.filter((user) => user.documento === ci);
+    setBodyData(filtered);
+  };
 
-  const [activarFiltro, setActivarFiltro] = useState(false);
-
-  const handleChange = (e) => {
-    setValorDocumento(e.target.value);
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const personalFiltrado = filtrarPorDocumento(personalFilter, valorDocumento);
-    setPersonalFilter(personalFiltrado);
-
-  }
-  const actualizarEstado = (documento) => {
-    const personalActualizado = personalFilter.map((user) => {
+  const updateUserState = (documento) => {
+    let userList = JSON.parse(window.localStorage.getItem("user_list") || "[]");
+    userList = userList.map((user) => {
       if (user.documento === documento) {
-        return {
-          ...user,
-          estado: !user.estado
-        }
+        return { ...user, estado: !user.estado };
       }
       return user;
     });
-    setPersonalFilter(personalActualizado);
-  }
 
+    window.localStorage.setItem("user_list", JSON.stringify(userList));
+  };
   return (
-
-    <div className='centerTRN'>
-      {
-        activarFiltro === false ? (
-          <div className='boton-filtro'>
-            <CustomButton
-              content='Filtrar'
-              onClick={() => setActivarFiltro(true)}
-            />
-          </div>
-        ) : (
-          <>
-            <div className='boton-filtro'>
-              <CustomButton
-                content='Ocultar Filtro'
-                onClick={() => {
-                  setActivarFiltro(false);
-                  setPersonalFilter(
-                    typeof (personal) === "string" ?
-                      JSON.parse(personal)
-                      : personal
-                  )
-                  setValorDocumento('');
-                }}
-              />
-            </div>
-            <form action="" onSubmit={handleSubmit}>
-              <div className='buscar'>
-                <CustomInput
-                  value={valorDocumento}
-                  placeholder='Inserte Numero de Identificacion'
-                  type='number'
-                  onChange={handleChange}
-                />
-              </div>
-              <div className='boton-buscar'>
-                <CustomButton content='Buscar' />
-              </div>
-            </form>
-
-          </>
-        )
-      }
-      {
-        activarFiltro === true ? (
-          <div className='tabla'>
-            <CustomTable
-              headerData={headers}
-              bodyData={
-                personalFilter
-              }
-            />
-          </div>
-        ) : (
-          <div className='tabla'>
-            <CustomTable
-              headerData={headers}
-              bodyData={users}
-              actualizarEstado={actualizarEstado}
-            />
-          </div>
-        )
-      }
+    <div className="centerTRN">
+      <form
+        action=""
+        className="search-for__customtnr"
+        onSubmit={handleFormSubmit}
+      >
+        <div className="buscar">
+          <CustomInput
+            placeholder={placeholder}
+            type="number"
+            onChange={handleCIChange}
+            value={ci}
+          />
+        </div>
+        <div className="boton-buscar">
+          <CustomButton content="Buscar" />
+        </div>
+      </form>
+      <div className="tabla">
+        <CustomTable
+          headerData={headers}
+          bodyData={
+            bodyData.length > 0
+              ? bodyData
+              : JSON.parse(window.localStorage.getItem("user_list") || "[]")
+          }
+          actualizarEstado={updateUserState}
+        />
+      </div>
     </div>
   );
 };

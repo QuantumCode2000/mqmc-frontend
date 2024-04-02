@@ -1,12 +1,8 @@
 import "./Login.styles.css";
 import Logo_2 from "../../assets/images/Logo_2.png";
 import LOGO_principal from "../../assets/images/LOGO_principal.png";
-import PORTADA_PRINCIPAL from "../../assets/images/PORTADA_PRINCIPAL.png";
-import mascota_1 from "../../assets/images/mascota_1.png";
 import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
-import { Player } from "@lottiefiles/react-lottie-player";
-import { Link } from "react-router-dom";
 import CustomInput from "../../components/customs/CustomInput/CustomInput";
 import CustomButton from "../../components/customs/CustomButton/CustomButton";
 import { useState, useContext, useEffect } from "react";
@@ -18,8 +14,8 @@ import emailjs from "@emailjs/browser";
 let clave = "";
 
 const Login = () => {
-  const { Login, updateUserInfo } = useContext(AuthContext);
-  const { updateListPacientes, updateListPersonal } = useContext(UsersContext);
+  const { Login, updateCurrentUserInformation } = useContext(AuthContext);
+  const { updateUserList } = useContext(UsersContext);
 
   const [loginDate, setLoginDate] = useState({
     username: "",
@@ -28,13 +24,14 @@ const Login = () => {
   });
 
   const user_list =
-    JSON.parse(window.localStorage.getItem("listPersonal")) ||
+    JSON.parse(window.localStorage.getItem("user_list")) ||
     listUsers.personal;
 
   const user = user_list.find(
     (user) =>
       user.nombreUsuario === loginDate.username &&
-      user.password === loginDate.password
+      user.password === loginDate.password &&
+      user.estado === true
   );
 
   const handleSubmit = (e) => {
@@ -51,22 +48,9 @@ const Login = () => {
   const verifyUser = () => {
     if (user !== undefined && clave === parseInt(loginDate.codigo)) {
       Login();
-      updateUserInfo(user);
-      if (!window.localStorage.getItem("listPacientes")) {
-        updateListPacientes(listUsers.pacientes);
-        updateListPersonal(listUsers.personal);
-      }
-    }
-    if (
-      user !== undefined &&
-      loginDate.username === "admin" &&
-      clave === 1111
-    ) {
-      Login();
-      updateUserInfo(user);
-      if (!window.localStorage.getItem("listPacientes")) {
-        updateListPacientes(listUsers.pacientes);
-        updateListPersonal(listUsers.personal);
+      updateCurrentUserInformation(user);
+      if (!window.localStorage.getItem("user_list")) {
+        updateUserList(listUsers.personal);
       }
     } else {
       alert("Usuario incorrecto");

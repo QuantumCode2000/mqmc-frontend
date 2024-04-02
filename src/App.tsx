@@ -2,12 +2,9 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Login, Logout,Home } from "./views/exports";
 import {
-  NuevoPaciente,
   PrivateRoute,
   PublicRoute,
   AdministrarPersonal,
-  AgendarCita,
-  Casos,
   Preguntas
 } from "./components/exports";
 const router = createBrowserRouter([
@@ -23,21 +20,10 @@ const router = createBrowserRouter([
         path: "/logout",
         element: <Logout />,
       },
-      {
-        path: "/administrar-pacientes",
-        // element: <AdministrarPacientes />,
-      },
+
       {
         path: "/administrar-personal",
         element: <AdministrarPersonal />,
-      },
-      {
-        path: "/nuevo-paciente",
-        element: <NuevoPaciente />,
-      },
-      {
-        path: "/pacientes",
-        element: <Casos />,
       },
       {
         path:"/preguntas-respuestas",
@@ -63,10 +49,7 @@ const router = createBrowserRouter([
         path: "/login",
         element: <Login />,
       },
-      {
-        path: "/agendar-cita",
-        element: <AgendarCita />,
-      },
+      
     ],
   },
 ]);

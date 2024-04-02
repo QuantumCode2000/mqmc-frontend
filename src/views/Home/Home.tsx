@@ -5,6 +5,7 @@ import mascota_1 from "../../assets/images/mascota_1.png";
 import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { Link } from "react-router-dom";
 import "./Home.styles.css";
 const Home = () => {
   return (
@@ -31,7 +32,14 @@ const Home = () => {
 
           </div>
           <div className="container-main__buttons">
+          <div className="botones">
+          <Link to="/login">
             <button className="button-ingresar">Ingresar</button>
+          </Link>
+          <a href="https://mqmc.org/#/register">
+          <button className="button-ingresar crear-cuenta">Crear una Cuenta</button>
+          </a>
+          </div>
             <p className="terminos-condiciones">Términos y condiciones</p>
             <img src={footer_img} alt="" className="footer-img" />
             <button
@@ -40,7 +48,6 @@ const Home = () => {
               <Player
                 autoplay
                 loop
-                // src="https://lottie.host/94444b37-849b-4c20-b3ce-a91268d430b3/t4HglhDnG6.json"
                 src="https://lottie.host/8abe799d-00ab-4d82-9360-8b77a971dbd6/PxHAP7vElj.json"
                 style={{ height: "100px", width: "100px", background: "none" }}
               ></Player>

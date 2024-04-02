@@ -1,36 +1,26 @@
-import { useState, createContext, FC, ReactNode, useEffect } from "react";
-import listUser from "../data/listUsers";
+import { useState, createContext, FC, ReactNode } from "react";
 
 const UsersContext = createContext(null);
 
 const UsersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
-    const [pacientes, setPacientes] = useState(
-        () => {
-            window.localStorage.getItem("listPacientes")
-        })
-    const [personal, setPersonal] = useState(() => window.localStorage.getItem("listPersonal"))
+  const [users, setUsers] = useState(() =>
+    window.localStorage.getItem("user_list")
+  );
 
+  
+  const updateUserList = (list) => {
+    window.localStorage.setItem("user_list", JSON.stringify(list));
+    setUsers(list);
+  };
 
-    const updateListPacientes = (list) => {
-        window.localStorage.setItem("listPacientes", JSON.stringify(list));
-        setPacientes(list);
-    }
-    const updateListPersonal = (list) => {
-        window.localStorage.setItem("listPersonal", JSON.stringify(list));
-        setPersonal(list);
-    }
+  const value = {
+    users,
+    updateUserList,
+  };
 
-
-    const value = {
-        personal,
-        updateListPersonal,
-        pacientes,
-        updateListPacientes
-    };
-
-    return <UsersContext.Provider value={value}
-
-    >{children}</UsersContext.Provider>;
+  return (
+    <UsersContext.Provider value={value}>{children}</UsersContext.Provider>
+  );
 };
 
 export { UsersContextProvider };

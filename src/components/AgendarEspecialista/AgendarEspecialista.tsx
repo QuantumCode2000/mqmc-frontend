@@ -70,84 +70,86 @@ const AgendarEspecialista = () => {
     });
   };
   return (
-    <main className="window-content">
-      <div className="agendar-especialista">
-        <div className="agendar-especialista__form ">
-          {/* dame unos inputs */}
-          <h1
-            style={{
-              textAlign: "center",
-              fontSize: "1.5rem",
-              marginBottom: "20px",
-            }}
-          >
-            Informacion para agendar la especialidad
-          </h1>
-          <form action="" onSubmit={
-            handleSubmit
-          }>
-            <div className="especialidad-input">
-              <label htmlFor="">Seleccine la especialidad</label>
-              <CustomSelect
-                name="especialidad"
-                arrayOptionsSelect={especialidades}
-                onChange={(e) => handleCustomSelect(e, setSelectEspecialidad)}
-                value={selectEspecialidad}
-              />
-            </div>
-            <label htmlFor="">Seleccione al soldado</label>
-            <CustomSelect
-              name="soldado"
-              arrayOptionsSelect={extraerNombrePaciente()}
-              onChange={(e) => handleCustomSelect(e, setSelectSoldado)}
-              value={selectSoldado}
-            />
+  //   <main className="window-content">
+  //     <div className="agendar-especialista">
+  //       <div className="agendar-especialista__form ">
+  //         {/* dame unos inputs */}
+  //         <h1
+  //           style={{
+  //             textAlign: "center",
+  //             fontSize: "1.5rem",
+  //             marginBottom: "20px",
+  //           }}
+  //         >
+  //           Informacion para agendar la especialidad
+  //         </h1>
+  //         <form action="" onSubmit={
+  //           handleSubmit
+  //         }>
+  //           <div className="especialidad-input">
+  //             <label htmlFor="">Seleccine la especialidad</label>
+  //             <CustomSelect
+  //               name="especialidad"
+  //               arrayOptionsSelect={especialidades}
+  //               onChange={(e) => handleCustomSelect(e, setSelectEspecialidad)}
+  //               value={selectEspecialidad}
+  //             />
+  //           </div>
+  //           <label htmlFor="">Seleccione al soldado</label>
+  //           <CustomSelect
+  //             name="soldado"
+  //             arrayOptionsSelect={extraerNombrePaciente()}
+  //             onChange={(e) => handleCustomSelect(e, setSelectSoldado)}
+  //             value={selectSoldado}
+  //           />
 
-            <CustomInput
-              label="Fecha de la Cita"
-              type="date"
-              placeholder="Fecha de la Cita"
-                name="fecha"
-                required
-                value={data.fecha}
-                onChange={(e) => {
-                  setData({
-                    ...data,
-                    [e.target.name]: e.target.value,
-                    especialidad: selectEspecialidad,
-                    soldado: selectSoldado,
-                    meetEnlace : `https://meet.google.com/${Math.random().toString(36).substring(7)}`
-                  });
-                }}
-            />
-            <CustomButton
-            type="submit"
-            content="Agendar Especialidad"/>
-          </form>
-        </div>
+  //           <CustomInput
+  //             label="Fecha de la Cita"
+  //             type="date"
+  //             placeholder="Fecha de la Cita"
+  //               name="fecha"
+  //               required
+  //               value={data.fecha}
+  //               onChange={(e) => {
+  //                 setData({
+  //                   ...data,
+  //                   [e.target.name]: e.target.value,
+  //                   especialidad: selectEspecialidad,
+  //                   soldado: selectSoldado,
+  //                   meetEnlace : `https://meet.google.com/${Math.random().toString(36).substring(7)}`
+  //                 });
+  //               }}
+  //           />
+  //           <CustomButton
+  //           type="submit"
+  //           content="Agendar Especialidad"/>
+  //         </form>
+  //       </div>
 
-        <div className="agendar-especialista_table">
-            <CustomTable 
-            headerData={headersEspecialidad}
+  //       <div className="agendar-especialista_table">
+  //           <CustomTable 
+  //           headerData={headersEspecialidad}
 
-            bodyData={
-              localStorage.getItem("listEspecialidades")
-  ? JSON.parse(localStorage.getItem("listEspecialidades") as string)
-  : [
-    {
-      especialidad: "",
-      soldado: "",
-      fecha: "",
-      meetEnlace : ""
-    }
-  ]
-            }
+  //           bodyData={
+  //             localStorage.getItem("listEspecialidades")
+  // ? JSON.parse(localStorage.getItem("listEspecialidades") as string)
+  // : [
+  //   {
+  //     especialidad: "",
+  //     soldado: "",
+  //     fecha: "",
+  //     meetEnlace : ""
+  //   }
+  // ]
+  //           }
 
-            />
-        </div>
-      </div>
-    </main>
-  );
+  //           />
+  //       </div>
+  //     </div>
+  //   </main>
+  // );
+  <div>Module not used</div>
+  )
 };
 
 export default AgendarEspecialista;

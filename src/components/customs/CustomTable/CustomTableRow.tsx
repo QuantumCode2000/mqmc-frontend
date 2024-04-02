@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import Row from "./Row";
 
 const CustomTableRow = ({ users, bodyData,actualizarEstado  }) => {
@@ -12,8 +11,5 @@ const CustomTableRow = ({ users, bodyData,actualizarEstado  }) => {
   );
 };
 
-// CustomTableRow.propTypes = {
-//   data: PropTypes.array
-// };
 
 export default CustomTableRow;

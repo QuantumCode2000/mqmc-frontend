@@ -103,6 +103,7 @@
   font-size: 14px;
   color: #12c185;
   text-decoration-line: underline;
+  margin-bottom: 2rem;
   
 }
 .main-home .main-box .container-main__buttons .footer-img{
@@ -125,6 +126,21 @@
   letter-spacing: 0.02857em;
   background-color: white;
   animation: wobble 1s 1;
+}
+
+.main-home .main-box .container-main__buttons .crear-cuenta {
+  background-color: rgb(18, 193, 133);
+  color: white;
+}
+
+.main-home .main-box .container-main__buttons .botones {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4rem;
+  flex-direction: row;
+  margin-bottom: 2rem;
+
 }
 
 
