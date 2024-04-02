@@ -1,15 +1,77 @@
 .modal-nuevo-registro{
     padding: 2rem;
     width: 650px;
-    height: 550px;
+    height: 580px;
     position: fixed;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    display: flex;
     background-color: #ffffff;
     box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.75);
-    border-radius: 8px;
+    border-radius: 2px;
+    
+}
+
+.modal-nuevo-registro h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+
+}
+
+/* .modal-nuevo-registro .inputs-box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+} */
+
+.modal-nuevo-registro .inputs-box input{
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d3b2b2;
+    border-radius: 2px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modal-nuevo-registro .inputs-box .formulario1 {
+    display: grid;
+    grid-template-columns: repeat(2, 47.2%);
+}
+
+.modal-nuevo-registro .inputs-box .expedicionci {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    width: 70%;
+}
+
+.modal-nuevo-registro .inputs-box .expedicionci select{
+    
+    /* padding: 0.5rem; */
+    border: 1px solid #d3b2b2;
+    margin-top: 20px;
+    height: 58%;
+    margin-left: 15%;
+    width: 165%;
+}
+
+.modal-nuevo-registro .inputs-box  select{
+    
+    /* padding: 0.5rem; */
+    border: 1px solid #d3b2b2;
+    margin-top: 20px;
+    height: 50px;
+    margin-left: 3%;
+    width: 87%;
+}
+
+.modal-nuevo-registro .buttons-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 60%;
+    margin-left: 16%;
+   
 }

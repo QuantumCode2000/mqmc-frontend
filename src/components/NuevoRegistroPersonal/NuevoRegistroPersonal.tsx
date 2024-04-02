@@ -14,7 +14,7 @@ function NuevoRegistroPersonal() {
         content='Nuevo Registro'
         onClick={() => setOpenModal(true)}
       />
-      {/* <Modal open={openModal} onClose={() => setOpenModal(false)} /> */}
+      <Modal open={openModal} onClose={() => setOpenModal(false)} />
       {/* <ModalEdit open={openModal} onClose={() => setOpenModal(false)} /> */}
     </>
   );

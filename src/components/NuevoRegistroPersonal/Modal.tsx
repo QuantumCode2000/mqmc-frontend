@@ -92,34 +92,10 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
     <div className="overlay ">
       <div className="modal-nuevo-registro">
-        <h2>Informacion Personal</h2>
+        <h2>Nuevo Registro</h2>
         <form className="inputs-box" onSubmit={handleSubmit}>
-          <CustomInput
-            type="text"
-            placeholder="Nombre Completo"
-            name="nombresApellidos"
-            required
-            value={inforPersonal.nombresApellidos}
-            onChange={handleChangePersonal}
-          />
-          <CustomInput
-            type="number"
-            placeholder="Carnet de Identidad"
-            name="documento"
-            required
-            value={inforPersonal.documento}
-            onChange={handleChangePersonal}
-          />
-          <CustomSelect
-            name="expedicion"
-            arrayOptionsSelect={expediciones}
-            onChange={(e) => {
-              handleCustomSelect(e, setSelectExpedicion);
-            }}
-            value={selectExpedicion}
-          />
-
-          <CustomInput
+          <div className="formulario1">
+        <CustomInput
             type="text"
             placeholder="Nombre de Usuario"
             name="nombreUsuario"
@@ -135,6 +111,7 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
             value={inforPersonal.password}
             onChange={handleChangePersonal}
           />
+          </div>
           <CustomInput
             type="email"
             placeholder="Correo Institucional"
@@ -143,6 +120,34 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
             value={inforPersonal.correoInstitucional}
             onChange={handleChangePersonal}
           />
+          <CustomInput
+            type="text"
+            placeholder="Nombre Completo"
+            name="nombresApellidos"
+            required
+            value={inforPersonal.nombresApellidos}
+            onChange={handleChangePersonal}
+          />
+          <div className="expedicionci">
+          <CustomInput
+            type="number"
+            placeholder="Carnet de Identidad"
+            name="documento"
+            required
+            value={inforPersonal.documento}
+            onChange={handleChangePersonal}
+          />
+          <div className="selectorexpedicion">
+          <CustomSelect
+            name="expedicion"
+            arrayOptionsSelect={expediciones}
+            onChange={(e) => {
+              handleCustomSelect(e, setSelectExpedicion);
+            }}
+            value={selectExpedicion}
+          />
+          </div>
+          </div>          
           <CustomSelect
             name="rol"
             arrayOptionsSelect={especialidades}
