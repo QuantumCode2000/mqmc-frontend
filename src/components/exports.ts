@@ -7,6 +7,7 @@ import PublicRoute from "./router/PublicRoute";
 import NuevoPaciente from "./NuevoPaciente/NuevoPaciente";
 import Citas from "./Citas/Citas";
 import AgendarEspecialista from "./AgendarEspecialista/AgendarEspecialista";
+import Preguntas from "./Preguntas/Preguntas";
 export {
     Citas,
     AdministrarPersonal,
@@ -16,5 +17,6 @@ export {
     PrivateRoute,
     PublicRoute,
     NuevoPaciente,
-    AgendarEspecialista
+    AgendarEspecialista,
+    Preguntas
 }

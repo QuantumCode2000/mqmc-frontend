@@ -89,8 +89,6 @@ const CustomTNR = (props) => {
             />
           </div>
         )
-
-
       }
     </div>
   );
