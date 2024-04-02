@@ -5,7 +5,7 @@ import { especialidades, expediciones } from "../../data/datosSelect";
 import { useState, useContext } from "react";
 import UsersContext from "../../context/UsersContext";
 import "./ModalNuevoRegistro.styles.css"
-const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
+const ModalEdit = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   const { updateListPersonal } = useContext(UsersContext);
   const personalLocalStorage = JSON.parse(
     window.localStorage.getItem("listPersonal") as string
@@ -92,10 +92,10 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
   return (
     <div className="overlay ">
       <div className="modal-nuevo-registro">
-        <h2>Nuevo Registro</h2>
+        <h2>Editar informacion </h2>
         <form className="inputs-box" onSubmit={handleSubmit}>
-          <div className="formulario1">
-        <CustomInput
+
+          <CustomInput
             type="text"
             placeholder="Nombre de Usuario"
             name="nombreUsuario"
@@ -111,7 +111,6 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
             value={inforPersonal.password}
             onChange={handleChangePersonal}
           />
-          </div>
           <CustomInput
             type="email"
             placeholder="Correo Institucional"
@@ -120,34 +119,6 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
             value={inforPersonal.correoInstitucional}
             onChange={handleChangePersonal}
           />
-          <CustomInput
-            type="text"
-            placeholder="Nombre Completo"
-            name="nombresApellidos"
-            required
-            value={inforPersonal.nombresApellidos}
-            onChange={handleChangePersonal}
-          />
-          <div className="expedicionci">
-          <CustomInput
-            type="number"
-            placeholder="Carnet de Identidad"
-            name="documento"
-            required
-            value={inforPersonal.documento}
-            onChange={handleChangePersonal}
-          />
-          <div className="selectorexpedicion">
-          <CustomSelect
-            name="expedicion"
-            arrayOptionsSelect={expediciones}
-            onChange={(e) => {
-              handleCustomSelect(e, setSelectExpedicion);
-            }}
-            value={selectExpedicion}
-          />
-          </div>
-          </div>          
           <CustomSelect
             name="rol"
             arrayOptionsSelect={especialidades}
@@ -165,11 +136,11 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
               onClose();
             }}
           />
-          <CustomButton content="Guardar" onClick={handleSubmit} />
+          <CustomButton content="Editar" onClick={handleSubmit} />
         </div>
       </div>
     </div>
   );
 };
 
-export default Modal;
+export default ModalEdit;

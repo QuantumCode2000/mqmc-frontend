@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
-import Logo_2 from "../../../assets/images/Logo_2_sf.png";
+import Logo_principal from "../../../assets/images/LOGO_principal.png";
 const CustomSidebarOptions = ({ data_user, opciones ,sidActive}) => {
   return (
     <aside className={
@@ -19,11 +19,13 @@ const CustomSidebarOptions = ({ data_user, opciones ,sidActive}) => {
         </div>
       </div> */}
       <div className="icon-sidebar perfil-usuario">
-        <img src={Logo_2} alt="" />
+        <img src={Logo_principal} alt="" />
+        <h1>{data_user.informacionLaboral.nivelJerarquico}</h1>
       </div>
-      <div className="divider">
+      <div className="line"></div>
+      {/* <div className="divider">
       
-      </div>
+      </div> */}
       <div className='opciones-sidebar '>
         {opciones.map((opcion, index) => {
           return (

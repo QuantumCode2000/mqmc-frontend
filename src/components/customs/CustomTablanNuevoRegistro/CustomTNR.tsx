@@ -5,7 +5,7 @@ import "./CustomTNR.styles.css";
 import { filtrarPorDocumento } from "../../../services/filtrados"
 import { useState, useContext } from "react";
 import UsersContext from "../../../context/UsersContext";
-const CustomTNR = (props) => {
+const CustomTNR = ({headers,users}) => {
   const { personal } = useContext(UsersContext);
   const [personalFilter, setPersonalFilter] = useState(
     typeof (personal) === "string" ?
@@ -25,6 +25,18 @@ const CustomTNR = (props) => {
     const personalFiltrado = filtrarPorDocumento(personalFilter, valorDocumento);
     setPersonalFilter(personalFiltrado);
 
+  }
+  const actualizarEstado = (documento) => {
+    const personalActualizado = personalFilter.map((user) => {
+      if (user.documento === documento) {
+        return {
+          ...user,
+          estado: !user.estado
+        }
+      }
+      return user;
+    });
+    setPersonalFilter(personalActualizado);
   }
 
   return (
@@ -75,7 +87,7 @@ const CustomTNR = (props) => {
         activarFiltro === true ? (
           <div className='tabla'>
             <CustomTable
-              headerData={props.headerTablesAdminUs}
+              headerData={headers}
               bodyData={
                 personalFilter
               }
@@ -84,8 +96,9 @@ const CustomTNR = (props) => {
         ) : (
           <div className='tabla'>
             <CustomTable
-              headerData={props.headerTablesAdminUs}
-              bodyData={props.data}
+              headerData={headers}
+              bodyData={users}
+              actualizarEstado={actualizarEstado}
             />
           </div>
         )
