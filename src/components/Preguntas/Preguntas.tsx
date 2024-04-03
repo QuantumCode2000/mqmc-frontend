@@ -1,6 +1,7 @@
 import { headersPreguntasRespuestas } from "../../data/headersTables"
 import CustomTNR  from "../customs/CustomTablanNuevoRegistro/CustomTNR"
 import { q_pairs } from "../../data/q_pairs"
+import NuevoRegistroPregunta from "../NuevoRegistroPregunta/NuevoRegistroPregunta"
 
 const Preguntas = () => {
   return (
@@ -12,6 +13,7 @@ const Preguntas = () => {
           <p>Loading personal...</p>
         )
       }
+      <NuevoRegistroPregunta/>
       
     </main>
   )
