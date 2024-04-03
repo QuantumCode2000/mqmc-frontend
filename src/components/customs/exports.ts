@@ -9,5 +9,5 @@ export {
     CustomInput,
     CustomButton,
     CustomSelect,
-    CustomSidebar
+    CustomSidebar,
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BiEdit } from "react-icons/bi";
-const Row = ({ user, keys, users, actualizarEstado }) => {
+const Row = ({ user, keys, users, actualizarEstado,openModalEdit, setOpenModalEdit }) => {
   const userCurrent = users.find(
     (userCurrent) => userCurrent.documento === user.documento
   );
@@ -29,7 +29,11 @@ const Row = ({ user, keys, users, actualizarEstado }) => {
             }
           </div>
         ) : key === "editar" ? (
-          <div className="boton-editar">
+          <div className="boton-editar"
+          onClick={() => {
+            setOpenModalEdit(!openModalEdit);
+          }}
+          >
             <BiEdit />
           </div>
         ) : (

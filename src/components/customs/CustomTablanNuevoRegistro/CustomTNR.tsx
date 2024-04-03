@@ -3,7 +3,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import CustomTable from "../CustomTable/CustomTable";
 import "./CustomTNR.styles.css";
 import { useState } from "react";
-const CustomTNR = ({ headers, users , placeholder}) => {
+const CustomTNR = ({ headers, users , placeholder,openModalEdit, setOpenModalEdit}) => {
   const [ci, setCI] = useState("");
   const [bodyData, setBodyData] = useState(users);
   const handleCIChange = (event) => {
@@ -58,6 +58,9 @@ const CustomTNR = ({ headers, users , placeholder}) => {
               : JSON.parse(window.localStorage.getItem("user_list") || "[]")
           }
           actualizarEstado={updateUserState}
+          openModalEdit={openModalEdit}
+          setOpenModalEdit={setOpenModalEdit}
+          
         />
       </div>
     </div>

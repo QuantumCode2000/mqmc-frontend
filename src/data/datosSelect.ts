@@ -13,18 +13,18 @@ const expediciones = [
   "BE",
   "PD",
 ]
-const especialidades = [
-  "Seleccione una especialidad",
-  "GENERAL",
-  "DERMATOLÓGICAS",
-  "DIGESTIVO",
-  "ODONTOLÓGICOS",
-  "OFTALMOLÓGICAS",
-  "RESPIRATORIAS",
-  "TRAUMATOLÓGICOS",
-  "UROLÓGICAS",
-  "VIRALES",
-];
+
+const tipoUsuario = [
+  "Seleccione un tipo de usuario",
+  "Administrador",
+  "Coordinador",
+  "Investigador",
+]
+
+
+
+
+
 
 const divisiones_militatees = {
   "DIV. 1": [
@@ -177,4 +177,4 @@ const grados = [
   "CBO.",
   "SOLD."
 ]
-export { grados, especialidades, divisiones_militatees, expediciones };
+export { grados, tipoUsuario, divisiones_militatees, expediciones };

@@ -8,20 +8,21 @@ import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersona
 import UsersContext from "../../context/UsersContext";
 
 const AdministrarPersonal = () => {
-  const usersDataContext = useContext(UsersContext);
-  const personal = usersDataContext?.users;
+  const {users} = useContext(UsersContext);
+  
   const current_user = JSON.parse(
     window.localStorage.getItem("currentUser") as string
   );
-  const [users, setUsers] = useState([]);
+  const [usersList, setUsersList] = useState([]);
+  const [openModalEdit,setOpenModalEdit] = useState(false);
   useEffect(() => {
     const data = JSON.parse(
       window.localStorage.getItem("user_list") as string
     );
     if (data) {
-      setUsers(data);
+      setUsersList(data);
     }
-  }, [localStorage, personal]);
+  }, [users]);
 
   return (
     <main className=" window-content ">
@@ -32,15 +33,19 @@ const AdministrarPersonal = () => {
               ? headersUsuariosAdministrador
               : headersUsuariosCoordinador
           }
-          users={users}
+          users={usersList}
           placeholder="Buscar por Carnet de Identidad"
+          openModalEdit={openModalEdit}
+          setOpenModalEdit={setOpenModalEdit}
         />
       ) : (
         <p>Loading personal...</p>
       )}
       {current_user.rol === "Administrador" ? null : (
         <div className="nuevo-registro">
-          <NuevoRegistroPersonal />
+          <NuevoRegistroPersonal 
+            openModalEdit={openModalEdit} 
+            setOpenModalEdit={setOpenModalEdit}          />
         </div>
       )}
     </main>

@@ -1,12 +1,14 @@
-import CustomInput from "../customs/CustomInput/CustomInput";
-import CustomButton from "../customs/CustomButton/CustomButton";
-import CustomSelect from "../customs/CustomSelect/CustomSelect";
-import { especialidades, expediciones } from "../../data/datosSelect";
 import { useState, useContext } from "react";
+import {
+    CustomButton,
+    CustomInput,
+    CustomSelect
+} from "../customs/exports";
+import { tipoUsuario,expediciones } from "../../data/datosSelect";
 import UsersContext from "../../context/UsersContext";
 import "./ModalNuevoRegistro.styles.css"
 const ModalEdit = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
-  const { updateListPersonal } = useContext(UsersContext);
+  const { updateUserList } = useContext(UsersContext);
   const personalLocalStorage = JSON.parse(
     window.localStorage.getItem("listPersonal") as string
   );
@@ -94,7 +96,6 @@ const ModalEdit = ({ open, onClose }: { open: boolean; onClose: () => void }) =>
       <div className="modal-nuevo-registro">
         <h2>Editar informacion </h2>
         <form className="inputs-box" onSubmit={handleSubmit}>
-
           <CustomInput
             type="text"
             placeholder="Nombre de Usuario"
