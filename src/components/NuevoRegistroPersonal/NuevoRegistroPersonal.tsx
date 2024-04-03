@@ -4,7 +4,11 @@ import ModalEdit from "./ModalEdit";
 import "./NuevoRegistroPersonal.styles.css";
 import CustomButton from "../customs/CustomButton/CustomButton";
 
-function NuevoRegistroPersonal({openModalEdit, setOpenModalEdit}) {
+function NuevoRegistroPersonal({
+  openModalEdit,
+  setOpenModalEdit,
+  editedUserInformation,
+}) {
   const [openModal, setOpenModal] = useState(false);
 
   return (
@@ -14,11 +18,13 @@ function NuevoRegistroPersonal({openModalEdit, setOpenModalEdit}) {
         onClick={() => setOpenModal(true)}
       />
       <Modal open={openModal} onClose={() => setOpenModal(false)} />
-      <ModalEdit open={openModalEdit} onClose={() => setOpenModalEdit(false)} />
+      <ModalEdit
+        open={openModalEdit}
+        onClose={() => setOpenModalEdit(false)}
+        editedUserInformation={editedUserInformation}
+      />
     </>
   );
 }
 
 export default NuevoRegistroPersonal;
-
-

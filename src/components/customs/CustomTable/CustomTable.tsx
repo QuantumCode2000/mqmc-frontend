@@ -1,8 +1,14 @@
 import PropTypes from "prop-types";
 import CustomTableRow from "./CustomTableRow";
 import "./CustomTable.styles.css";
-const CustomTable = ({ headerData, bodyData, actualizarEstado ,
-openModalEdit, setOpenModalEdit
+const CustomTable = ({
+  headerData,
+  bodyData,
+  actualizarEstado,
+  openModalEdit,
+  setOpenModalEdit,
+  editedUserInformation,
+  setEditedUserInformation
 }) => {
   const headers = Object.values(headerData);
   const newbodyData = bodyData.map((user) => {
@@ -29,6 +35,7 @@ openModalEdit, setOpenModalEdit
               actualizarEstado={actualizarEstado}
               openModalEdit={openModalEdit}
               setOpenModalEdit={setOpenModalEdit}
+              setEditedUserInformation={setEditedUserInformation}
             />
           </tbody>
         </table>

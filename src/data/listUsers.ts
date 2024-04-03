@@ -21,7 +21,7 @@ const usuarios = {
       password: "12421511",
       nombreUsuario: "jperezr",
       rol: "Coordinador",
-      estado: false,
+      estado: true,
       correo: "historiasclinicasejercito@gmail.com",
     },
     {

@@ -3,7 +3,17 @@ import CustomButton from "../CustomButton/CustomButton";
 import CustomTable from "../CustomTable/CustomTable";
 import "./CustomTNR.styles.css";
 import { useState } from "react";
-const CustomTNR = ({ headers, users , placeholder,openModalEdit, setOpenModalEdit}) => {
+const CustomTNR = ({
+  headers,
+  users,
+  placeholder,
+  openModalEdit,
+  setOpenModalEdit,
+  editedUserInformation,
+  updatedUserInformation,
+  setEditedUserInformation
+  
+}) => {
   const [ci, setCI] = useState("");
   const [bodyData, setBodyData] = useState(users);
   const handleCIChange = (event) => {
@@ -11,7 +21,6 @@ const CustomTNR = ({ headers, users , placeholder,openModalEdit, setOpenModalEdi
     if (event.target.value === "") {
       setBodyData(users);
     }
-    
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -60,7 +69,8 @@ const CustomTNR = ({ headers, users , placeholder,openModalEdit, setOpenModalEdi
           actualizarEstado={updateUserState}
           openModalEdit={openModalEdit}
           setOpenModalEdit={setOpenModalEdit}
-          
+          editedUserInformation={editedUserInformation}
+          setEditedUserInformation={setEditedUserInformation}
         />
       </div>
     </div>
