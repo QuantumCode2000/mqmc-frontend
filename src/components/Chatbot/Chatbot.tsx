@@ -11,7 +11,7 @@ import {
 } from "@chatscope/chat-ui-kit-react";
 import { useState } from "react";
 
-const API_KEY = "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";
+
 // "Explain things like you would to a 10 year old learning how to code."
 const systemMessage = {
   //  Explain things like you're talking to a software professional with 5 years of experience.
@@ -70,7 +70,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer " + API_KEY,
+        Authorization: "Bearer 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",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(apiRequestBody),
