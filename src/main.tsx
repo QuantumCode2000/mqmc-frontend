@@ -9,15 +9,11 @@ import { UsersContextProvider } from './context/UsersContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    
-    
     <AuthContextProvider>
       <UsersContextProvider>
         <App />
       </UsersContextProvider>
     </AuthContextProvider>
-   
-    
   </React.StrictMode>,
 )
 

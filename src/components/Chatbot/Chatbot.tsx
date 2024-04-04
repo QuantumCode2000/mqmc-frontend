@@ -10,8 +10,7 @@ import {
   TypingIndicator,
 } from "@chatscope/chat-ui-kit-react";
 import { useState } from "react";
-// importtar key de .env
-const key = process.env.key;
+
 
 
 // "Explain things like you would to a 10 year old learning how to code."
@@ -72,7 +71,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer "+key,
+        Authorization: "Bearer "+import.meta.env.VITE_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(apiRequestBody),
