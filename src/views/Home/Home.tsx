@@ -6,8 +6,11 @@ import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
+import Chatbot from "../../components/Chatbot/Chatbot";
 import "./Home.styles.css";
+import { useState } from "react";
 const Home = () => {
+  const [openChat, setOpenChat] = useState(false);
   return (
     <div className="home-view">
       <header className="header-home">
@@ -23,42 +26,45 @@ const Home = () => {
             <div className="text-main">
               <span className="lightgreen-text">ME QUIERO</span>
               <span className="darkgreen-text">, ME CUIDO </span>
-              
-              es un programa gratuito para aprender a conocernos y
-                reconocernos
-              
+              es un programa gratuito para aprender a conocernos y reconocernos
             </div>
             <span className="text-welcome darkgreen-text ">¡BIENVENID@S!</span>
-
           </div>
           <div className="container-main__buttons">
-          <div className="botones">
-          <Link to="/login">
-            <button className="button-ingresar">Ingresar</button>
-          </Link>
-          <a href="https://mqmc.org/#/register">
-          <button className="button-ingresar crear-cuenta">Crear una Cuenta</button>
-          </a>
-          </div>
+            <div className="botones">
+              <Link to="/login">
+                <button className="button-ingresar">Ingresar</button>
+              </Link>
+              <a href="https://mqmc.org/#/register">
+                <button className="button-ingresar crear-cuenta">
+                  Crear una Cuenta
+                </button>
+              </a>
+            </div>
             <p className="terminos-condiciones">Términos y condiciones</p>
             <img src={footer_img} alt="" className="footer-img" />
-            <button
-              className="sticky-button__chatbot"
-            >
+            <button className="sticky-button__chatbot" onClick={
+              () => setOpenChat(!openChat)
+            }>
               <Player
                 autoplay
                 loop
                 src="https://lottie.host/8abe799d-00ab-4d82-9360-8b77a971dbd6/PxHAP7vElj.json"
                 style={{ height: "100px", width: "100px", background: "none" }}
               ></Player>
-            </button >
-            <button className="sticky-button__mascota"
-            >
-              <img src={mascota_1} alt="" style={{ height: "110px", width: "110px", background: "none" }} />
+            </button>
+            <button className="sticky-button__mascota">
+              <img
+                src={mascota_1}
+                alt=""
+                style={{ height: "110px", width: "110px", background: "none" }}
+              />
             </button>
           </div>
         </div>
       </main>
+
+      <Chatbot openChat={openChat} />
 
       <footer className="footer-home">
         <div className="redes-sociales__footer">
