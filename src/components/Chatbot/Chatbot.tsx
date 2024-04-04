@@ -89,7 +89,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
         //   },
         // ]);
         // setIsTyping(false);
-        console.log(data);
+        // console.log(data);
         // Verificar si 'choices' está definido en la respuesta de la API
         if (data.choices && data.choices.length > 0) {
           setMessages([
@@ -115,7 +115,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
               typingIndicator={isTyping ? <TypingIndicator /> : null}
             >
               {messages.map((message, i) => {
-                console.log(message);
+                // console.log(message);
                 return <Message key={i} model={message} />;
               })}
             </MessageList>
