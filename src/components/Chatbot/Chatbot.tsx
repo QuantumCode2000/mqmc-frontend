@@ -71,7 +71,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
     await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
       headers: {
-        Authorization: "Bearer "+import.meta.env.VITE_KEY,
+        Authorization: "Bearer "+import.meta.env.VITE_MQMC_FUNCTION_PROJECT_KEY,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(apiRequestBody),

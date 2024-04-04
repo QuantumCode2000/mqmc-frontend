@@ -79,7 +79,7 @@ tr,
 td {
   /* border: 1px solid #391414; */
   text-align: left;
-  padding: 15px;
+  padding: 1px;
   border-bottom: 0.0625rem solid rgb(240, 242, 245);
 }
 table td {
