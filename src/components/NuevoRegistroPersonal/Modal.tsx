@@ -125,7 +125,7 @@ const Modal = ({ open, onClose }: { open: boolean; onClose: () => void }) => {
         </form>
         <div className="buttons-box">
           <CustomButton
-            content="Cancelar"
+          content="Cancelar"
             onClick={() => {
               clearForm();
               onClose();
