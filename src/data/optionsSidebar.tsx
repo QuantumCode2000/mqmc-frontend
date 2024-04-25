@@ -1,6 +1,8 @@
 import { GrUserAdd, GrUserSettings, GrLogout } from "react-icons/gr";
 import { FaFileMedical } from "react-icons/fa";
 import { BsFileEarmarkMedical } from "react-icons/bs";
+import path from "path";
+import { text } from "stream/consumers";
 const opcionesAdmin = [
   {
     to: "/administrar-personal",
@@ -29,6 +31,12 @@ const opcionesInvestigador = [
     to: "/preguntas-respuestas",
     icon: <GrUserAdd />,
     text: "Preguntas",
+  },
+  {
+    to: "/responder",
+    icon: <GrUserSettings />,
+    text: "Responder Usuarios",
+
   },
   {
     to: "/logout",

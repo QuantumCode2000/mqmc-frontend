@@ -7,6 +7,7 @@ import {
   AdministrarPersonal,
   Preguntas
 } from "./components/exports";
+import ResponderUsuarios from "./components/ResponderUsuarios/ResponderUsuarios";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path:"/preguntas-respuestas",
         element:<Preguntas/>
+      },
+      {
+        path:"/responder",
+        element:<ResponderUsuarios/>
       }
       
 
