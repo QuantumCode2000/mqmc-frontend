@@ -6,7 +6,6 @@ import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
-import Chatbot from "../../components/Chatbot/Chatbot";
 import "./Home.styles.css";
 import { useState } from "react";
 const Home = () => {
@@ -44,7 +43,13 @@ const Home = () => {
             <p className="terminos-condiciones">Términos y condiciones</p>
             <img src={footer_img} alt="" className="footer-img" />
             <button className="sticky-button__chatbot" onClick={
-              () => setOpenChat(!openChat)
+              () => {
+                window.open(
+                  "http://localhost:4000",
+                  "_blank",
+                  "width=650,height=540,scrollbars=yes,top=150, left=420 "
+                );
+              }
             }>
               <Player
                 autoplay
@@ -64,7 +69,6 @@ const Home = () => {
         </div>
       </main>
 
-      <Chatbot openChat={openChat} />
 
       <footer className="footer-home">
         <div className="redes-sociales__footer">
