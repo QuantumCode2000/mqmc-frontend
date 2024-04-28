@@ -1,0 +1,15 @@
+.container-reportes{
+    margin : 10px;
+    width: 90%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 80px;
+
+}
+.container-reportes .subtitulo {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}

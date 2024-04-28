@@ -6,6 +6,7 @@ import {
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
 import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersonal.tsx";
 import UsersContext from "../../context/UsersContext";
+import "./AdministrarPersonal.styles.css"
 
 const AdministrarPersonal = () => {
   const { users } = useContext(UsersContext);
@@ -14,9 +15,7 @@ const AdministrarPersonal = () => {
   );
   const [usersList, setUsersList] = useState([]);
   const [openModalEdit, setOpenModalEdit] = useState(false);
-  const [editedUserInformation, 
-    setEditedUserInformation
-  ] = useState(null);
+  const [editedUserInformation, setEditedUserInformation] = useState(null);
   useEffect(() => {
     const data = JSON.parse(window.localStorage.getItem("user_list") as string);
     if (data) {
@@ -45,35 +44,41 @@ const AdministrarPersonal = () => {
 
   return (
     <main className=" window-content ">
-      {users.length > 0 ? (
-        <CustomTNR
-          headers={
-            current_user.rol === "Administrador"
-              ? headersUsuariosAdministrador
-              : headersUsuariosCoordinador
-          }
-          users={usersList}
-          placeholder="Buscar por Carnet de Identidad"
-          openModalEdit={openModalEdit}
-          setOpenModalEdit={setOpenModalEdit}
-          editedUserInformation={editedUserInformation}
-          updatedUserInformation={updatedUserInformation}
-          setEditedUserInformation={setEditedUserInformation}
-        />
-      ) : (
-        <p>Loading personal...</p>
-      )}
-      {current_user.rol === "Administrador" ? null : (
-        <div className="nuevo-registro">
-          <NuevoRegistroPersonal
+      <div className="container-usuarios">
+        <div className="subtitulo">
+        <h1 >Usuarios</h1>
+        <hr />
+        </div>
+        {users.length > 0 ? (
+          <CustomTNR
+            headers={
+              current_user.rol === "Administrador"
+                ? headersUsuariosAdministrador
+                : headersUsuariosCoordinador
+            }
+            users={usersList}
+            placeholder="Buscar por Carnet de Identidad"
             openModalEdit={openModalEdit}
             setOpenModalEdit={setOpenModalEdit}
             editedUserInformation={editedUserInformation}
             updatedUserInformation={updatedUserInformation}
             setEditedUserInformation={setEditedUserInformation}
           />
-        </div>
-      )}
+        ) : (
+          <p>Loading personal...</p>
+        )}
+        {current_user.rol === "Administrador" ? null : (
+          <div className="nuevo-registro">
+            <NuevoRegistroPersonal
+              openModalEdit={openModalEdit}
+              setOpenModalEdit={setOpenModalEdit}
+              editedUserInformation={editedUserInformation}
+              updatedUserInformation={updatedUserInformation}
+              setEditedUserInformation={setEditedUserInformation}
+            />
+          </div>
+        )}
+      </div>
     </main>
   );
 };

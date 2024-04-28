@@ -14,6 +14,8 @@ const AuthContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
     () => JSON.parse(window.localStorage.getItem("currentUser") as string) || {}
   );
 
+  
+
   const Login = () => {
     window.localStorage.setItem(MY_AUTH_APP, true);
     setIsAuthenticated("true");

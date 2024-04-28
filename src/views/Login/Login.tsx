@@ -9,6 +9,7 @@ import { useState, useContext, useEffect } from "react";
 import AuthContext from "../../context/AuthContext";
 import UsersContext from "../../context/UsersContext";
 import listUsers from "../../data/listUsers.ts";
+import { q_pairs } from "../../data/q_pairs.ts";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 let clave = "";
@@ -24,8 +25,7 @@ const Login = () => {
   });
 
   const user_list =
-    JSON.parse(window.localStorage.getItem("user_list")) ||
-    listUsers.personal;
+    JSON.parse(window.localStorage.getItem("user_list")) || listUsers.personal;
 
   const user = user_list.find(
     (user) =>
@@ -52,6 +52,10 @@ const Login = () => {
       if (!window.localStorage.getItem("user_list")) {
         updateUserList(listUsers.personal);
       }
+      if (!window.localStorage.getItem("qa")) {
+        window.localStorage.setItem("qa", JSON.stringify(q_pairs));
+      }
+      
     } else {
       alert("Usuario incorrecto");
     }
@@ -63,15 +67,16 @@ const Login = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_4bamxj2", "template_v2bbvie", form.current, {
-        publicKey: "bxRB-d7FMwKxzGqi1",
+      .sendForm("service_0j4u4x1", "template_dzqcj7w", form.current, {
+        publicKey: "BpgnWhXIUSQikI48e",
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          // console.log("SUCCESS!");
+          alert("Codigo enviado a su correo");
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          console.error("FAILED...", error.text);
         }
       );
   };
@@ -82,16 +87,10 @@ const Login = () => {
   }, []);
   if (user !== undefined) {
     form.current.user_name.value = user.nombreUsuario;
-    form.current.user_email.value = user.correoInstitucional;
+    form.current.user_email.value = user.correo;
     // quiero que mesaggue sea un numero de 4 digitos aleatorio
-    if (loginDate.username === "admin") {
-      console.log("si entro");
-      form.current.message.value = 1111;
-    } else {
-      form.current.message.value = clave;
-    }
+    form.current.message.value = clave;
   }
-  console.log(clave);
 
   return (
     <div className="home-view">
@@ -104,16 +103,21 @@ const Login = () => {
       <main className="main-home">
         <div className="main-box__login">
           <div className="container-main__mesagge">
+            <h1></h1>
             <main className="container-without_sidebar">
+              <br />
+              <br />
+              <br />
+              <br />
               <form
                 action=""
                 onSubmit={handleSubmit}
                 className="login-container"
               >
-                <h1 className="login-title">Iniciar Sesion</h1>
+                <h1 className="login-title">BIENVENIDO AL SISTEMA DE MQMC</h1>
 
                 <CustomInput
-                label="Usuario"
+                  label="Usuario"
                   type="text"
                   placeholder="Usuario"
                   value={loginDate.username}
@@ -121,7 +125,7 @@ const Login = () => {
                   name="username"
                 />
                 <CustomInput
-                label="Contraseña"
+                  label="Contraseña"
                   type="password"
                   placeholder="Contraseña"
                   value={loginDate.password}
@@ -139,24 +143,23 @@ const Login = () => {
                 ) : null}
                 <CustomButton type="submit" content="Iniciar Sesion" />
               </form>
-
               <form ref={form} onSubmit={sendEmail}>
                 <input
                   type="text"
                   className="user_name"
                   name="user_name"
-                  style={{ display: "none", color: "red" }}
+                  style={{ display: "none" }}
                 />
                 <input
                   type="email"
                   className="user_email"
                   name="user_email"
-                  style={{ display: "none", color: "red" }}
+                  style={{ display: "none" }}
                 />
                 <textarea
                   className="message"
                   name="message"
-                  style={{ display: "none", color: "red" }}
+                  // style={{ display: "none" }}
                 />
 
                 {user !== undefined ? (

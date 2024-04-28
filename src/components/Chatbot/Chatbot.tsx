@@ -414,7 +414,7 @@ const Chatbot = ({ openChat, onCloseChat }) => {
   };
 
   async function processMessage(chatMessages) {
-    let apiMessages = chatMessages.map((messageObject) => {
+    const apiMessages = chatMessages.map((messageObject) => {
       let role = "";
       if (messageObject.sender === "botMQMC") {
         role = "assistant";

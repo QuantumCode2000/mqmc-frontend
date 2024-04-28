@@ -6,7 +6,7 @@ import CustomTable from "../customs/CustomTable/CustomTable";
 import {headersEspecialidad} from "../../data/headersTables"
 
 const AgendarEspecialista = () => {
-    let especialidadesReg = []
+    const especialidadesReg = []
   const [data, setData] = useState({
     especialidad: "",
     soldado: "",

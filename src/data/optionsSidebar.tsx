@@ -5,6 +5,12 @@ import path from "path";
 import { text } from "stream/consumers";
 const opcionesAdmin = [
   {
+    to:"/perfil",
+    icon : <GrUserAdd/>,
+    text:"Perfil"
+  },
+  {
+
     to: "/administrar-personal",
     icon: <GrUserSettings />,
     text: "Usuarios",
@@ -28,13 +34,18 @@ const opcionesAdmin = [
 
 const opcionesInvestigador = [
   {
+    to:"/perfil",
+    icon : <GrUserAdd/>,
+    text:"Perfil"
+  },
+  {
     to: "/preguntas-respuestas",
     icon: <GrUserAdd />,
     text: "Preguntas",
   },
   {
     to: "/responder",
-    icon: <GrUserSettings />,
+    icon: <GrUserSettings />, 
     text: "Responder Usuarios",
 
   },
@@ -46,6 +57,11 @@ const opcionesInvestigador = [
 ];
 
 const opcionesCoordinador = [
+  {
+    to:"/perfil",
+    icon : <GrUserAdd/>,
+    text:"Perfil"
+  },
   {
     to: "/administrar-personal",
     icon: <GrUserAdd />,
@@ -59,7 +75,6 @@ const opcionesCoordinador = [
   {
     to: "/reportes",
     icon: <GrUserSettings />,
-
     text: "Reportes",
   },
   

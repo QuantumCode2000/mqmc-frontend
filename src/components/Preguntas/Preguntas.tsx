@@ -1,22 +1,35 @@
-import { headersPreguntasRespuestas } from "../../data/headersTables"
-import CustomTNR  from "../customs/CustomTablanNuevoRegistro/CustomTNR"
-import { q_pairs } from "../../data/q_pairs"
-import NuevoRegistroPregunta from "../NuevoRegistroPregunta/NuevoRegistroPregunta"
-
+import { headersPreguntasRespuestas } from "../../data/headersTables";
+import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
+import { q_pairs } from "../../data/q_pairs";
+import NuevoRegistroPregunta from "../NuevoRegistroPregunta/NuevoRegistroPregunta";
+import "./Preguntas.styles.css";
+import { useState } from "react";
 const Preguntas = () => {
-  return (
-    <main className=' window-content '>
-      {
-        q_pairs.length > 0 ? (
-           <CustomTNR headers={headersPreguntasRespuestas} users={q_pairs}  placeholder="Buscar por ID"/>
-        ) : (
-          <p>Loading personal...</p>
-        )
-      }
-      <NuevoRegistroPregunta/>
-      
-    </main>
-  )
-}
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const preguntas = JSON.parse(localStorage.getItem("qa")) || q_pairs;
 
-export default Preguntas
+  return (
+    <main className=" window-content ">
+      <div className="container-preguntas">
+        <div className="subtitulo">
+          <h1>Preguntas</h1>
+          <hr />
+        </div>
+
+        {preguntas.length > 0 ? (
+          <CustomTNR
+            headers={headersPreguntasRespuestas}
+            users={preguntas}
+            placeholder="Buscar por ID"
+          />
+        ) : (
+          <p>Loading preguntas...</p>
+        )}
+        {currentUser.rol === "Coordinador" ? <NuevoRegistroPregunta /> : null}
+      </div>
+    </main>
+  );
+};
+
+export default Preguntas;
+

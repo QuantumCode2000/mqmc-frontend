@@ -5,7 +5,8 @@ import {
   PrivateRoute,
   PublicRoute,
   AdministrarPersonal,
-  Preguntas
+  Preguntas,
+  Reportes,Perfil
 } from "./components/exports";
 import ResponderUsuarios from "./components/ResponderUsuarios/ResponderUsuarios";
 const router = createBrowserRouter([
@@ -33,8 +34,15 @@ const router = createBrowserRouter([
       {
         path:"/responder",
         element:<ResponderUsuarios/>
+      },
+      {
+        path:"/reportes",
+        element:<Reportes/>
+      },
+      {
+        path:"/perfil",
+        element:<Perfil/>
       }
-      
 
     ],
   },
