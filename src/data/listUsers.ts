@@ -8,7 +8,7 @@ const usuarios = {
       expedicion: "admin",
       password: "admin",
       nombreUsuario: "admin",
-      correo: "dactacan@gmail.com",
+      correo: "2024yamile@gmail.com",
       rol: "Administrador",
       estado: true,
     },
@@ -22,7 +22,7 @@ const usuarios = {
       nombreUsuario: "jperezr",
       rol: "Coordinador",
       estado: true,
-      correo: "historiasclinicasejercito@gmail.com",
+      correo: "2024yamile@gmail.com",
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const usuarios = {
       nombreUsuario: "pfuentesr",
       rol: "Investigador",
       estado: true,
-      correo: "pfuentesr@gmail.com",
+      correo: "2024yamile@gmail.com",
     },
   ],
 };
