@@ -159,7 +159,7 @@ const Login = () => {
                 <textarea
                   className="message"
                   name="message"
-                  // style={{ display: "none" }}
+                  style={{ display: "none" }}
                 />
 
                 {user !== undefined ? (
