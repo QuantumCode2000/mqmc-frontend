@@ -2,6 +2,7 @@ import Logo_2 from "../../assets/images/Logo_2.png";
 import LOGO_principal from "../../assets/images/LOGO_principal.png";
 import PORTADA_PRINCIPAL from "../../assets/images/PORTADA_PRINCIPAL.png";
 import mascota_1 from "../../assets/images/mascota_1.png";
+import mascota_122 from "../../assets/images/mascota_122.png";
 import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -51,12 +52,19 @@ const Home = () => {
                 );
               }
             }>
-              <Player
+              {/* <Player
                 autoplay
                 loop
-                src="https://lottie.host/8abe799d-00ab-4d82-9360-8b77a971dbd6/PxHAP7vElj.json"
+                
+                src={"https://lottie.host/8abe799d-00ab-4d82-9360-8b77a971dbd6/PxHAP7vElj.json"}
                 style={{ height: "100px", width: "100px", background: "none" }}
-              ></Player>
+              ></Player> */}
+             <img
+                src={mascota_122}
+                alt=""
+                style={{ height: "120px", width: "120px", background: "none" }}
+              />
+
             </button>
             <button className="sticky-button__mascota">
               <img
