@@ -18,6 +18,7 @@
     "@mui/material": "^5.15.14",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^1.6.7",
+    "bcryptjs-react": "^2.4.6",
     "bootstrap": "^3.4.1",
     "chart.js": "^4.4.2",
     "emailjs-com": "^3.2.0",

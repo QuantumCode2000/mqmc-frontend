@@ -5,12 +5,10 @@ import mascota_1 from "../../assets/images/mascota_1.png";
 import mascota_122 from "../../assets/images/mascota_122.png";
 import footer_img from "../../assets/images/footer.jpg";
 import { BsTiktok, BsFacebook, BsInstagram } from "react-icons/bs";
-import { Player } from "@lottiefiles/react-lottie-player";
+// import { Player } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import "./Home.styles.css";
-import { useState } from "react";
 const Home = () => {
-  const [openChat, setOpenChat] = useState(false);
   return (
     <div className="home-view">
       <header className="header-home">
@@ -43,15 +41,16 @@ const Home = () => {
             </div>
             <p className="terminos-condiciones">Términos y condiciones</p>
             <img src={footer_img} alt="" className="footer-img" />
-            <button className="sticky-button__chatbot" onClick={
-              () => {
+            <button
+              className="sticky-button__chatbot"
+              onClick={() => {
                 window.open(
                   "http://localhost:4000",
                   "_blank",
-                  "width=650,height=540,scrollbars=yes,top=150, left=420 "
+                  "width=650,height=540,scrollbars=yes,top=150, left=420 ",
                 );
-              }
-            }>
+              }}
+            >
               {/* <Player
                 autoplay
                 loop
@@ -59,12 +58,11 @@ const Home = () => {
                 src={"https://lottie.host/8abe799d-00ab-4d82-9360-8b77a971dbd6/PxHAP7vElj.json"}
                 style={{ height: "100px", width: "100px", background: "none" }}
               ></Player> */}
-             <img
+              <img
                 src={mascota_122}
                 alt=""
                 style={{ height: "120px", width: "120px", background: "none" }}
               />
-
             </button>
             <button className="sticky-button__mascota">
               <img
@@ -76,7 +74,6 @@ const Home = () => {
           </div>
         </div>
       </main>
-
 
       <footer className="footer-home">
         <div className="redes-sociales__footer">

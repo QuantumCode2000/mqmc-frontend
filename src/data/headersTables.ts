@@ -1,29 +1,32 @@
 const headersUsuariosAdministrador = {
-  nombre: "Nombres",
-  documento: "CI",
-  expedicion: "Expedicion",
-  nombreUsuario: "Usuario",
-  password: "Contraseña",
-  correo: "Correo",
+  name: "Nombres",
+  ci: "CI",
+  expedition: "Expedicion",
+  username: "Usuario",
+  // password: "Contraseña",
+  email: "Correo",
   status: "Habilitado",
-  rol: "Rol",
+  role: "Rol",
 };
 
 const headersUsuariosCoordinador = {
-  nombre: "Nombres",
-  documento: "CI",
-  expedicion: "Expedicion",
-  nombreUsuario: "Usuario",
-  password: "Contraseña",
-  correo: "Correo",
+  name: "Nombres",
+  ci: "CI",
+  expedition: "Expedicion",
+  username: "Usuario",
+  // password: "Contraseña",
+  email: "Correo",
   status: "Habilitado",
-  rol: "Rol",
+  role: "Rol",
   editar: "Editar",
 };
 const headersPreguntasRespuestas = {
-  pregunta: "Pregunta",
-  respuesta: "Respuesta",
+  question: "Pregunta",
+  answer: "Respuesta",
   video: "Video",
+  category: "Categoria",
+  ageGroup: "Grupo de Etario",
+  
 };
 
 export {

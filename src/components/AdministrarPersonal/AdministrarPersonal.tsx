@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useState, useContext } from "react";
 import {
   headersUsuariosAdministrador,
   headersUsuariosCoordinador,
@@ -6,57 +6,58 @@ import {
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
 import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersonal.tsx";
 import UsersContext from "../../context/UsersContext";
-import "./AdministrarPersonal.styles.css"
+import "./AdministrarPersonal.styles.css";
 
 const AdministrarPersonal = () => {
-  const { users } = useContext(UsersContext);
-  const current_user = JSON.parse(
-    window.localStorage.getItem("currentUser") as string
+  const { users, updateUserList } = useContext(UsersContext);
+  const currentUser = JSON.parse(
+    window.localStorage.getItem("currentUser") || "{}",
   );
-  const [usersList, setUsersList] = useState([]);
   const [openModalEdit, setOpenModalEdit] = useState(false);
   const [editedUserInformation, setEditedUserInformation] = useState(null);
-  useEffect(() => {
-    const data = JSON.parse(window.localStorage.getItem("user_list") as string);
-    if (data) {
-      setUsersList(data);
-    }
-  }, [users]);
+
+  // Eliminada la lógica de cargar datos del localStorage.
 
   const updatedUserInformation = (newUserInformation) => {
-    let userList = JSON.parse(
-      window.localStorage.getItem("user_list") as string
+    // Actualiza la información de los usuarios utilizando el contexto
+    const updatedUsers = users.map((user) =>
+      user.documento === newUserInformation.documento
+        ? {
+            ...user,
+            nombreUsuario: newUserInformation.nombreUsuario,
+            password: newUserInformation.password,
+            correo: newUserInformation.correo,
+            rol: newUserInformation.rol,
+          }
+        : user,
     );
-    userList = userList.map((user) => {
-      if (user.documento === newUserInformation.documento) {
-        return {
-          ...user,
-          nombreUsuario: newUserInformation.nombreUsuario,
-          password: newUserInformation.password,
-          correo: newUserInformation.correo,
-          rol: newUserInformation.rol,
-        };
-      }
-      return user;
-    });
+    updateUserList(updatedUsers);
   };
-  console.log(editedUserInformation);
+  const handleUserUpdated = (updatedUserInfo) => {
+    const updatedUsers = users.map((user) =>
+      user.id === updatedUserInfo.id ? { ...user, ...updatedUserInfo } : user,
+    );
+    updateUserList(updatedUsers);
+  };
+  const handleNewUserAdded = (newUser) => {
+    updateUserList([...users, newUser]);
+  };
 
   return (
-    <main className=" window-content ">
+    <main className="window-content">
       <div className="container-usuarios">
         <div className="subtitulo">
-        <h1 >Usuarios</h1>
-        <hr />
+          <h1>Usuarios</h1>
+          <hr />
         </div>
         {users.length > 0 ? (
           <CustomTNR
             headers={
-              current_user.rol === "Administrador"
+              currentUser.role === "Administrador"
                 ? headersUsuariosAdministrador
                 : headersUsuariosCoordinador
             }
-            users={usersList}
+            users={users}
             placeholder="Buscar por Carnet de Identidad"
             openModalEdit={openModalEdit}
             setOpenModalEdit={setOpenModalEdit}
@@ -67,7 +68,7 @@ const AdministrarPersonal = () => {
         ) : (
           <p>Loading personal...</p>
         )}
-        {current_user.rol === "Administrador" ? null : (
+        {currentUser.rol === "Administrador" ? null : (
           <div className="nuevo-registro">
             <NuevoRegistroPersonal
               openModalEdit={openModalEdit}
@@ -75,6 +76,8 @@ const AdministrarPersonal = () => {
               editedUserInformation={editedUserInformation}
               updatedUserInformation={updatedUserInformation}
               setEditedUserInformation={setEditedUserInformation}
+              onUserUpdated={handleUserUpdated}
+              onAddUser={handleNewUserAdded}
             />
           </div>
         )}

@@ -6,7 +6,7 @@ const CustomSidebarOptions = ({ data_user, opciones, isSidebarActive }) => {
     <aside className={isSidebarActive ? "sidebar active" : "sidebar"}>
       <div className="icon-sidebar perfil-usuario">
         <img src={Logo_principal} alt="" />
-        <h1>{data_user.rol}</h1>
+        <h1>{data_user.role}</h1>
       </div>
       <div className="line"></div>
 

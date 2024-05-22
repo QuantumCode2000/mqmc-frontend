@@ -8,7 +8,7 @@ const CustomTable = ({
   openModalEdit,
   setOpenModalEdit,
   editedUserInformation,
-  setEditedUserInformation
+  setEditedUserInformation,
 }) => {
   const headers = Object.values(headerData);
   const newbodyData = bodyData.map((user) => {

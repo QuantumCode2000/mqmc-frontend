@@ -8,6 +8,7 @@ function NuevoRegistroPersonal({
   openModalEdit,
   setOpenModalEdit,
   editedUserInformation,
+  onUserUpdated,
 }) {
   const [openModal, setOpenModal] = useState(false);
 
@@ -22,6 +23,7 @@ function NuevoRegistroPersonal({
         open={openModalEdit}
         onClose={() => setOpenModalEdit(false)}
         editedUserInformation={editedUserInformation}
+        onUserUpdated={onUserUpdated}
       />
     </>
   );

@@ -1,14 +1,16 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Login, Logout,Home } from "./views/exports";
+import { Login, Logout, Home } from "./views/exports";
 import {
   PrivateRoute,
   PublicRoute,
   AdministrarPersonal,
   Preguntas,
-  Reportes,Perfil
+  Reportes,
+  Perfil,
 } from "./components/exports";
 import ResponderUsuarios from "./components/ResponderUsuarios/ResponderUsuarios";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -16,34 +18,32 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1></h1>,
+        element: <h1>Bienvenido al Sistema de MQMC</h1>,
       },
       {
-        path: "/logout",
+        path: "logout",
         element: <Logout />,
       },
-
       {
-        path: "/administrar-personal",
+        path: "administrar-personal",
         element: <AdministrarPersonal />,
       },
       {
-        path:"/preguntas-respuestas",
-        element:<Preguntas/>
+        path: "preguntas-respuestas",
+        element: <Preguntas />,
       },
       {
-        path:"/responder",
-        element:<ResponderUsuarios/>
+        path: "responder",
+        element: <ResponderUsuarios />,
       },
       {
-        path:"/reportes",
-        element:<Reportes/>
+        path: "reportes",
+        element: <Reportes />,
       },
       {
-        path:"/perfil",
-        element:<Perfil/>
-      }
-
+        path: "perfil",
+        element: <Perfil />,
+      },
     ],
   },
   {
@@ -52,17 +52,16 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <h1>Public</h1>,
+        element: <h1>Página Pública</h1>,
       },
       {
-        path: "/home",
+        path: "home",
         element: <Home />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <Login />,
       },
-      
     ],
   },
 ]);

@@ -10,10 +10,8 @@ const Row = ({
   editedUserInformation,
   setEditedUserInformation,
 }) => {
-  const userCurrent = users.find(
-    (userCurrent) => userCurrent.documento === user.documento
-  );
-  const [isChecked, setIsChecked] = useState(userCurrent.estado);
+  const userCurrent = users.find((userCurrent) => userCurrent.ci === user.ci);
+  const [isChecked, setIsChecked] = useState(userCurrent?.status);
   return (
     <tr key={user.id}>
       {keys.map((key) =>
@@ -30,7 +28,7 @@ const Row = ({
                 <label
                   htmlFor="checkbox"
                   onClick={() => {
-                    actualizarEstado(userCurrent.documento);
+                    actualizarEstado(userCurrent.ci, userCurrent.status);
                     setIsChecked(!isChecked);
                   }}
                 ></label>
@@ -49,7 +47,7 @@ const Row = ({
           </div>
         ) : (
           <td key={key}>{user[key]}</td>
-        )
+        ),
       )}
     </tr>
   );

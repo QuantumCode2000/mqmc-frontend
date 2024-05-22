@@ -11,8 +11,7 @@ const CustomTNR = ({
   setOpenModalEdit,
   editedUserInformation,
   updatedUserInformation,
-  setEditedUserInformation
-  
+  setEditedUserInformation,
 }) => {
   const [ci, setCI] = useState("");
   const [bodyData, setBodyData] = useState(users);
@@ -24,21 +23,47 @@ const CustomTNR = ({
   };
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    const filtered = users.filter((user) => user.documento === ci);
+    const filtered = users.filter((user) => user.ci === ci);
     setBodyData(filtered);
   };
 
-  const updateUserState = (documento) => {
-    let userList = JSON.parse(window.localStorage.getItem("user_list") || "[]");
-    userList = userList.map((user) => {
-      if (user.documento === documento) {
-        return { ...user, estado: !user.estado };
-      }
-      return user;
-    });
+  const updateUserState = async (documento, currentStatus) => {
+    // const userToUpdate = users.find((user) => user.documento === documento);
+    // if (!userToUpdate) return;
+    console.log(documento, currentStatus);
 
-    window.localStorage.setItem("user_list", JSON.stringify(userList));
+    // const updatedStatus = !userToUpdate.estado;
+
+    try {
+      const token = window.localStorage.getItem("my-auth-app");
+      const response = await fetch(
+        `http://localhost:3000/api/v1/users/status/${documento}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ status: !currentStatus }),
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to update user status");
+      }
+
+      // Actualiza el estado en el contexto si la API devuelve éxito
+      // const updatedUsers = users.map((user) =>
+      // user.documento === documento
+      // ? { ...user, estado: updatedStatus }
+      // : user,
+      // );
+      // updateUserList(updatedUsers);
+    } catch (error) {
+      console.error("Error updating user status:", error);
+    }
   };
+
   return (
     <div className="centerTRN">
       <form
@@ -64,7 +89,7 @@ const CustomTNR = ({
           bodyData={
             bodyData.length > 0
               ? bodyData
-              : JSON.parse(window.localStorage.getItem("user_list") || "[]")
+              : [{ nombreUsuario: "No hay resultados" }]
           }
           actualizarEstado={updateUserState}
           openModalEdit={openModalEdit}
