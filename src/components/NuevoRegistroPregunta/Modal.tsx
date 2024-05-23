@@ -202,7 +202,7 @@ const Modal = ({
           <CustomSelect
             name="ageGroup"
             arrayOptionsSelect={[
-              "Seleccione una opción",
+              "Seleccione un grupo etario",
               "Adolescentes",
               "Jóvenes",
             ]}
@@ -222,9 +222,37 @@ const Modal = ({
             name="category"
             arrayOptionsSelect={
               ageGroup === "Adolescentes"
-                ? ["Seleccione una opción", "Adolescentes1", "Adolescentes2"]
+                ? [
+                    "Educación sobre la sexualidad",
+                    "prevencion de embarazos no deseados emabarzo adolescente y segundo embarazo",
+                    "prevencion de enfermedades de transmision sexual (ETS)",
+                    "Consentimiento y relaciones saludables",
+                    "Derechos sexuales y reproductivos",
+                    "Salud mental y emocional",
+                    "Tecnología y medios digitales Asociados con el sexting",
+                    "Maternidad y paternidad responsables",
+                    "Diversidad y inclusión",
+                    "Prevención del abuso sexual",
+                    "Sexualidad y autocuidado",
+                    "equidad de genero",
+                    "identidad y conocimiento personal",
+                  ]
                 : ageGroup === "Jóvenes"
-                ? ["Seleccione una opción", "Jóvenes1", "Jóvenes2"]
+                ? [
+                    "Educación sobre la sexualidad",
+                    "Prevención de embarazos no deseados",
+                    "Prevención de enfermedades de transmisión sexual (ETS)",
+                    "Consentimiento y relaciones saludables",
+                    "Derechos sexuales y reproductivos",
+                    "Salud mental y emocional",
+                    "Tecnología y medios digitales Asociados con el sexting",
+                    "Maternidad y paternidad responsables",
+                    "Diversidad y inclusión",
+                    "Prevención del abuso sexual",
+                    "RELACIONES COITALES",
+                    "EQUIDAD DE GENERO",
+                    "MI SEXUALIDAD Y AUTOCUIDADO",
+                  ]
                 : ["Seleccione grupo etario primero"]
             }
             value={category}
