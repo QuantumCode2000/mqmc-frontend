@@ -64,6 +64,7 @@ const AdministrarPersonal = () => {
             editedUserInformation={editedUserInformation}
             updatedUserInformation={updatedUserInformation}
             setEditedUserInformation={setEditedUserInformation}
+            activo={true}
           />
         ) : (
           <p>Loading personal...</p>

@@ -12,6 +12,7 @@ const CustomTNR = ({
   editedUserInformation,
   updatedUserInformation,
   setEditedUserInformation,
+  activo,
 }) => {
   const [ci, setCI] = useState("");
   const [bodyData, setBodyData] = useState(users);
@@ -66,23 +67,26 @@ const CustomTNR = ({
 
   return (
     <div className="centerTRN">
-      <form
-        action=""
-        className="search-for__customtnr"
-        onSubmit={handleFormSubmit}
-      >
-        <div className="buscar">
-          <CustomInput
-            placeholder={placeholder}
-            type="number"
-            onChange={handleCIChange}
-            value={ci}
-          />
-        </div>
-        <div className="boton-buscar">
-          <CustomButton content="Buscar" />
-        </div>
-      </form>
+      {activo ? (
+        <form
+          action=""
+          className="search-for__customtnr"
+          onSubmit={handleFormSubmit}
+        >
+          <div className="buscar">
+            <CustomInput
+              placeholder={placeholder}
+              type="number"
+              onChange={handleCIChange}
+              value={ci}
+            />
+          </div>
+
+          <div className="boton-buscar">
+            <CustomButton content="Buscar" />
+          </div>
+        </form>
+      ) : null}
       <div className="tabla">
         <CustomTable
           headerData={headers}
