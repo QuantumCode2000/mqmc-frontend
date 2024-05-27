@@ -232,7 +232,7 @@ const Preguntas = () => {
         setPreguntasFiltradas(filtered);
       }
     }
-      };
+  };
 
   return (
     <main className="window-content">
