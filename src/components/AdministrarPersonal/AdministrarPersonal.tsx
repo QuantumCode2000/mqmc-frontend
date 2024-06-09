@@ -4,6 +4,7 @@ import {
   headersUsuariosCoordinador,
 } from "../../data/headersTables";
 import CustomTNR from "../customs/CustomTablanNuevoRegistro/CustomTNR";
+
 import NuevoRegistroPersonal from "../NuevoRegistroPersonal/NuevoRegistroPersonal.tsx";
 import UsersContext from "../../context/UsersContext";
 import "./AdministrarPersonal.styles.css";
@@ -46,10 +47,6 @@ const AdministrarPersonal = () => {
   return (
     <main className="window-content">
       <div className="container-usuarios">
-        <div className="subtitulo">
-          <h1>Usuarios</h1>
-          <hr />
-        </div>
         {users.length > 0 ? (
           <CustomTNR
             headers={
