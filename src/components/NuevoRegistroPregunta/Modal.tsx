@@ -1,5 +1,6 @@
 import { CustomInput, CustomButton, CustomSelect } from "../customs/exports";
 import { useState, ChangeEvent, FormEvent } from "react";
+import "./NuevoRegistroPregunta.styles.css";
 
 interface ModalProps {
   open: boolean;
@@ -100,7 +101,6 @@ const Modal = ({ open, onClose, onSaved }: ModalProps) => {
 
           <CustomSelect
             name="ageGroup"
-            required
             arrayOptionsSelect={[
               "Seleccione un grupo etario",
               "Adolescentes",
@@ -111,9 +111,9 @@ const Modal = ({ open, onClose, onSaved }: ModalProps) => {
               handleChange(e as ChangeEvent<HTMLSelectElement>, setAgeGroup)
             }
           />
+          
           <CustomSelect
             name="category"
-            required
             arrayOptionsSelect={
               ageGroup === "Adolescentes"
                 ? [

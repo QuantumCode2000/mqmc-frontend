@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <>
       <CustomSidebar setTitle={setTitle} />
-      <div className="p-4 sm:ml-[30rem]">
+      <div className="p-4 sm:ml-[40rem]">
         <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-28">
           <main>
             <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">

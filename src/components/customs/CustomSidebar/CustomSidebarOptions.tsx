@@ -3,7 +3,7 @@ const CustomSidebarOptions = ({ setTitle, opciones, isSidebarActive }) => {
   return (
     <aside
       id="logo-sidebar"
-      className={`fixed top-0 left-0 z-40 w-[30rem] h-screen pt-32 transition-transform ${
+      className={`fixed top-0 left-0 z-40 w-[40rem] h-screen pt-32 transition-transform ${
         isSidebarActive ? "translate-x-0" : "-translate-x-full"
       } bg-white border-r border-gray-200 sm:translate-x-0`}
       aria-label="Sidebar"
