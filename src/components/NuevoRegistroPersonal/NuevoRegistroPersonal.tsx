@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Modal from "./Modal";
 import ModalEdit from "./ModalEdit";
-import "./NuevoRegistroPersonal.styles.css";
+// import "./NuevoRegistroPersonal.styles.css";
 import CustomButton from "../customs/CustomButton/CustomButton";
 
 function NuevoRegistroPersonal({
